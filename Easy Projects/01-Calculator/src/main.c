@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#define M_PI 3.14159265358979323846
 double Num1, Num2, Res;
 char Op;
 
@@ -76,7 +77,7 @@ int main() {
     scanf("%lf", &Num1);
     printf("Enter operator: ");
     scanf(" %c", &Op);
-    if(Op != '|' && Op != 'r' && Op != 's' && Op != 'c' && Op !='!' && Op != 'f' && Op != 'h' && Op != 'n' && Op != 'p') {
+    if(Op != '|' && Op != 'r' && Op != 's' && Op != 'c' && Op !='!' && Op != 'f' && Op != 'h' && Op != 'n' && Op != 'p' && Op != 't' && Op != 'u' && Op != 'v' && Op != 'S' && Op != 'A' && Op != 'T') {
         printf("Enter second number: ");
         scanf("%lf", &Num2);
     }
@@ -220,6 +221,38 @@ int main() {
                 return 1;
             }
             break;  
+
+        case 't':
+            Res = sin((Num1 * M_PI) / 180);
+            break;
+
+        case 'u':
+            Res = cos((Num1 * M_PI) / 180);
+            break;
+            
+        case 'v':
+            Res = tan((Num1 * M_PI) / 180);
+            break;
+
+        case 'S':
+            if (Num1 < -1 || Num1 > 1) {
+                printf("Math error");
+                return 1;
+            } 
+            Res = asin((Num1 * M_PI) / 180);
+            break;
+
+        case 'A':
+            if (Num1 < -1 || Num1 > 1) {
+                printf("Math error");
+                return 1;
+            } 
+            Res = acos((Num1 * M_PI) / 180);
+            break;
+
+        case 'T':
+            Res = atan((Num1 * M_PI) / 180);
+            break;
         
         default:
             printf("Syntax error");
