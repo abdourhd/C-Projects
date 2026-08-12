@@ -74,6 +74,8 @@ int main() {
     srand(time(NULL));
     printf("========================\n       CALCULATOR       \n========================\n\n");
  
+    printf("Enter first number: ");
+    scanf("%lf", &Num1);
     printf("\n========== OPERATORS ==========\n");
 
     printf("\nBasic:\n");
@@ -124,9 +126,6 @@ int main() {
     printf("  o  log\n");
 
     printf("\n===============================\n");
-
-    printf("Enter first number: ");
-    scanf("%lf", &Num1);
     printf("Enter operator: ");
     scanf(" %c", &Op);
     if(Op != '|' && Op != 'r' && Op != 's' && Op != 'c' && Op !='!' && Op != 'f' && Op != 'h' && Op != 'n' && Op != 'p' && Op != 't' && Op != 'u' && Op != 'v' && Op != 'S' && Op != 'A' && Op != 'T' && Op != 'e' && Op != 'E' && Op != 'L' && Op != 'o') {
