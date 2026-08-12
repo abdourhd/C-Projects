@@ -73,6 +73,58 @@ int gcd(double x, double y) {
 int main() {
     srand(time(NULL));
     printf("========================\n       CALCULATOR       \n========================\n\n");
+ 
+    printf("\n========== OPERATORS ==========\n");
+
+    printf("\nBasic:\n");
+    printf("  +  Addition\n");
+    printf("  -  Subtraction\n");
+    printf("  *  Multiplication\n");
+    printf("  /  Division\n");
+    printf("  %%  Modulo\n");
+
+    printf("\nPowers & Roots:\n");
+    printf("  ^  Power\n");
+    printf("  r  Square root\n");
+    printf("  s  Square\n");
+    printf("  c  Cube\n");
+
+    printf("\nOther:\n");
+    printf("  !  Factorial\n");
+    printf("  |  Absolute value\n");
+    printf("  @  Percentage\n");
+
+    printf("\nRounding:\n");
+    printf("  f  Floor\n");
+    printf("  h  Ceiling\n");
+    printf("  n  Round\n");
+
+    printf("\nAdvanced:\n");
+    printf("  C  Combination\n");
+    printf("  P  Permutation\n");
+    printf("  m  Minimum\n");
+    printf("  M  Maximum\n");
+    printf("  ?  Random number\n");
+    printf("  p  Prime check\n");
+    printf("  g  GCD\n");
+    printf("  l  LCM\n");
+
+    printf("\nTrigonometry:\n");
+    printf("  t  sinus\n");
+    printf("  u  cosinus\n");
+    printf("  v  tangent\n");
+    printf("  S  arcsinus\n");
+    printf("  A  arcosinus\n");
+    printf("  T  arctangent\n");
+
+    printf("\nExponential:\n");
+    printf("  e  exponential\n");
+    printf("  E  exp base-10\n");
+    printf("  L  ln\n");
+    printf("  o  log\n");
+
+    printf("\n===============================\n");
+
     printf("Enter first number: ");
     scanf("%lf", &Num1);
     printf("Enter operator: ");

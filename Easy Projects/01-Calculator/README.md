@@ -94,7 +94,7 @@ Result: 15
 
 ## 🚀 Future Improvements
 
-- [ ] Add more mathematical operations
+- [x] Add more mathematical operations
 - [ ] Add scientific calculations
 - [ ] Add calculation history
 - [ ] Improve error handling
