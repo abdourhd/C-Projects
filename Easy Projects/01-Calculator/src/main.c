@@ -77,7 +77,7 @@ int main() {
     scanf("%lf", &Num1);
     printf("Enter operator: ");
     scanf(" %c", &Op);
-    if(Op != '|' && Op != 'r' && Op != 's' && Op != 'c' && Op !='!' && Op != 'f' && Op != 'h' && Op != 'n' && Op != 'p' && Op != 't' && Op != 'u' && Op != 'v' && Op != 'S' && Op != 'A' && Op != 'T') {
+    if(Op != '|' && Op != 'r' && Op != 's' && Op != 'c' && Op !='!' && Op != 'f' && Op != 'h' && Op != 'n' && Op != 'p' && Op != 't' && Op != 'u' && Op != 'v' && Op != 'S' && Op != 'A' && Op != 'T' && Op != 'e' && Op != 'E' && Op != 'L' && Op != 'o') {
         printf("Enter second number: ");
         scanf("%lf", &Num2);
     }
@@ -252,6 +252,66 @@ int main() {
 
         case 'T':
             Res = atan((Num1 * M_PI) / 180);
+            break;
+
+        case 'C':
+            if(Num1 == (int)Num1 && Num2 == (int)Num2) {
+                int int1;
+                int int2;
+                if(Num1 > Num2) {
+                    int1 = (int)Num1;
+                    int2 = (int)Num2;
+                } else {
+                    int1 = (int)Num2;
+                    int2 = (int)Num1;
+                }
+                Res = factorial(int1) / (factorial(int2) * factorial(int1-int2));
+            } else {
+                printf("Math error");
+                return 1;
+            }
+            break;
+        
+        case 'P':
+            if(Num1 == (int)Num1 && Num2 == (int)Num2) {
+                int int1;
+                int int2;
+                if(Num1 > Num2) {
+                    int1 = (int)Num1;
+                    int2 = (int)Num2;
+                } else {
+                    int1 = (int)Num2;
+                    int2 = (int)Num1;
+                }
+                Res = factorial(int1) / factorial(int1-int2);
+            } else {
+                printf("Math error");
+                return 1;
+            }
+            break;
+
+        case 'e':
+            Res = exp(Num1);
+            break;
+
+        case 'E':
+            Res = pow(10, Num1);
+            break;
+
+        case 'L':
+            if(Num1 <= 0) {
+                printf("Math error");
+                return 1;
+            }
+            Res = log(Num1);
+            break;
+
+        case 'o':
+            if(Num1 <= 0) {
+                printf("Math error");
+                return 1;
+            }
+            Res = log(Num1) / log(10);
             break;
         
         default:
