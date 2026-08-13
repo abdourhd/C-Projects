@@ -33,7 +33,7 @@ The program allows the user to perform basic arithmetic operations through a ter
 ## 📁 Project Structure
 
 ```text
-Calculator/
+01-Calculator/
 │
 ├── src/
 │   └── main.c

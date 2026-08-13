@@ -70,6 +70,10 @@ int gcd(double x, double y) {
     return t1;
 }
 
+int lcm(double x, double y) {
+    return ((int)x * (int)y) / gcd(x, y);
+}
+
 int main() {
     srand(time(NULL));
     printf("========================\n       CALCULATOR       \n========================\n\n");
@@ -266,7 +270,7 @@ int main() {
 
         case 'l':
             if(Num1 == (int)Num1 && Num2 == (int)Num2) {
-                Res = (Num1 * Num2) / gcd(Num1, Num2);
+                Res = lcm(Num1, Num2);
             } else {
                 printf("Math error");
                 return 1;
