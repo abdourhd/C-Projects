@@ -266,8 +266,8 @@ This repository is built to progressively develop my C programming skills.
 
 ## Easy Projects
 
-- [ ] Calculator
-- [ ] Number Guessing Game
+- [x] Calculator
+- [x] Number Guessing Game
 - [ ] Quiz Game
 - [ ] Unit Converter
 - [ ] Contact Book
@@ -276,6 +276,11 @@ This repository is built to progressively develop my C programming skills.
 - [ ] To-Do List
 - [ ] Password Generator
 - [ ] Digital Clock
+- [ ] Simple Banking Program
+- [ ] Temperature Converter
+- [ ] Hangman
+- [ ] Simple Text Statistics
+- [ ] Currency Converter
 
 ## Medium Projects
 
@@ -289,6 +294,8 @@ This repository is built to progressively develop my C programming skills.
 - [ ] File Compression Tool
 - [ ] Sudoku Solver
 - [ ] Maze Generator & Solver
+- [ ] Command-Line Calendar
+- [ ] Expense tracker
 - [ ] CPU Scheduling Simulator
 - [ ] Expression Evaluator
 - [ ] Custom Data Structures Library
