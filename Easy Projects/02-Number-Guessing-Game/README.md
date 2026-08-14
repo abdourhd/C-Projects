@@ -126,7 +126,7 @@ I can make the projects more advanced by adding:
 - [x] Difficulty levels
 - [x] Difficulty-based scoring
 - [x] High score system
-- [ ] Multiple rounds
+- [x] Multiple rounds
 
 ## License
 
