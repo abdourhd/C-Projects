@@ -2,7 +2,7 @@
 
 A simple number guessing game written in **C**.
 
-The program randomly selects a number between 1 and 100, and the player has to guess the number. After every guess, the program tells the player whether their guess is too high or too low.
+The program randomly selects a number between 1 and 100, and the player has to guess the number. After every guess, the program tells the player whether their guess is too high or too low, if the player got too many wrong guess, he will lose, other wise he will win and get a score based on the number of attempts to guess the number.
 
 ## Features
 
@@ -39,7 +39,8 @@ The program randomly selects a number between 1 and 100, and the player has to g
 5. If the guess is too high, the program displays `Hint: Less!`.
 6. The game continues until the correct number is guessed.
 7. The number of attempts is displayed at the end.
-8. If the number of attempts reach it's limit the game end with a loss.
+8. The score is displayed at the end.
+9. If the number of attempts reach it's limit the game end with a loss.
 
 ## Compilation
 
@@ -108,7 +109,7 @@ This project helps practice:
 I can make the projects more advanced by adding:
 
 - [x] Limited number of attempts
-- [ ] Score system
+- [x] Score system
 - [ ] Different number ranges
 - [ ] High score system
 - [ ] Multiple rounds
