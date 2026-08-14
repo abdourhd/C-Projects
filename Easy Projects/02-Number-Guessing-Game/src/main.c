@@ -34,7 +34,7 @@ int main() {
     printf("I have chosen a number between 1 and %d.\nCan you guess it?\n", R);
 
     N = rand() % R + 1;
-    S = 100 * MAX;
+    S = R * MAX;
     C = 0;
     do {
         printf("\nenter a number: ");
@@ -42,10 +42,10 @@ int main() {
         C++;
         if(G > N) {
             printf("Try again\nHint: Less!\n");
-            S -= 100;
+            S -= R;
         } else if(G < N) {
             printf("Try again\nHint: More!\n");
-            S -= 100;
+            S -= R;
         } else {
             printf("\nCongratulations! You guessed the number!!\nThe number was %d.\nNumber of attempts: %d\n\nYour score: %d points\n", N, C, S);
             break;
