@@ -21,7 +21,7 @@ The program randomly selects a number between 1 and 100, and the player has to g
 ## Project Structure
 
 ```text
-Number-Guessing-Game/
+02-Number-Guessing-Game/
 │
 ├── src/
 │   └── main.c
@@ -35,10 +35,11 @@ Number-Guessing-Game/
 1. The program generates a random number between 1 and 100.
 2. The player enters a guess.
 3. The program compares the guess with the secret number.
-4. If the guess is too low, the program displays `Too low!`.
-5. If the guess is too high, the program displays `Too high!`.
+4. If the guess is too low, the program displays `Hint: More!`.
+5. If the guess is too high, the program displays `Hint: Less!`.
 6. The game continues until the correct number is guessed.
 7. The number of attempts is displayed at the end.
+8. If the number of attempts reach it's limit the game end with a loss.
 
 ## Compilation
 
@@ -106,7 +107,7 @@ This project helps practice:
 
 I can make the projects more advanced by adding:
 
-- [ ] Limited number of attempts
+- [x] Limited number of attempts
 - [ ] Score system
 - [ ] Different number ranges
 - [ ] High score system
