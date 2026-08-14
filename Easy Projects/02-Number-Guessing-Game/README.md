@@ -114,7 +114,7 @@ I can make the projects more advanced by adding:
 - [x] Limited number of attempts
 - [x] Score system
 - [x] Different number ranges
-- [ ] Difficulty levels
+- [x] Difficulty levels
 - [ ] Difficulty-based scoring
 - [ ] High score system
 - [ ] Multiple rounds
