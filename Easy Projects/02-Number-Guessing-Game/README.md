@@ -2,14 +2,16 @@
 
 A simple number guessing game written in **C**.
 
-The program randomly selects a number between 1 and 100, and the player has to guess the number. After every guess, the program tells the player whether their guess is too high or too low, if the player got too many wrong guess, he will lose, other wise he will win and get a score based on the number of attempts to guess the number.
+The player choose a difficulty between easy, medium, hard and extreme. The program randomly selects a number between 1 and a number defined by the choosen difficulty, and the player has to guess the number. After every guess, the program tells the player whether their guess is too high or too low, if the player got too many wrong guess, he will lose, other wise he will win and get a score based on the number of attempts to guess the number.
 
 ## Features
 
 - Random number generation
 - User input
 - High/low hints
+- Difficulty system
 - Attempt counter
+- Score counter
 - Simple command-line interface
 
 ## Technologies
@@ -32,15 +34,16 @@ The program randomly selects a number between 1 and 100, and the player has to g
 
 ## How It Works
 
-1. The program generates a random number between 1 and 100.
-2. The player enters a guess.
-3. The program compares the guess with the secret number.
-4. If the guess is too low, the program displays `Hint: More!`.
-5. If the guess is too high, the program displays `Hint: Less!`.
-6. The game continues until the correct number is guessed.
-7. The number of attempts is displayed at the end.
-8. The score is displayed at the end.
-9. If the number of attempts reach it's limit the game end with a loss.
+1. The user enter a difficulty. (ex: Easy)
+2. The program generates a random number between 1 and a maximum number according to the difficulty.
+3. The player enters a guess.
+4. The program compares the guess with the secret number.
+5. If the guess is too low, the program displays `Hint: More!`.
+6. If the guess is too high, the program displays `Hint: Less!`.
+7. The game continues until the correct number is guessed.
+8. The number of attempts is displayed at the end.
+9. The score is displayed at the end.
+10. If the number of attempts reach it's limit the game end with a loss.
 
 ## Compilation
 
@@ -96,6 +99,7 @@ This project helps practice:
 
 - Variables
 - `if / else if / else`
+- `switch / case`
 - `do while` loops
 - User input with `scanf()`
 - Random numbers with `rand()`
@@ -110,11 +114,11 @@ I can make the projects more advanced by adding:
 
 - [x] Limited number of attempts
 - [x] Score system
-- [ ] Different number ranges
+- [x] Different number ranges
+- [x] Difficulty levels
+- [x] Difficulty-based scoring
 - [ ] High score system
 - [ ] Multiple rounds
-- [ ] Difficulty levels
-- [ ] Difficulty-based scoring
 
 ## License
 
