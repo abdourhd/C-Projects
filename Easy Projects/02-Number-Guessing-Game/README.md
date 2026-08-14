@@ -12,6 +12,7 @@ The player choose a difficulty between easy, medium, hard and extreme. The progr
 - Difficulty system
 - Attempt counter
 - Score counter
+- High score diplay
 - Simple command-line interface
 
 ## Technologies
@@ -28,6 +29,9 @@ The player choose a difficulty between easy, medium, hard and extreme. The progr
 ├── src/
 │   └── main.c
 │
+├── data/
+│   └── highscore.c
+│
 ├── .gitignore
 └── README.md
 ```
@@ -43,7 +47,8 @@ The player choose a difficulty between easy, medium, hard and extreme. The progr
 7. The game continues until the correct number is guessed.
 8. The number of attempts is displayed at the end.
 9. The score is displayed at the end.
-10. If the number of attempts reach it's limit the game end with a loss.
+10. The high score is displayed at the end
+11. If the number of attempts reach it's limit the game end with a loss.
 
 ## Compilation
 
@@ -91,6 +96,8 @@ Enter your guess: 35
 Congratulations! You guessed the number!
 The number was 35.
 Number of attempts: 5
+Score: 500
+HighScore: 900
 ```
 
 ## Concepts Practiced
@@ -105,6 +112,7 @@ This project helps practice:
 - Random numbers with `rand()`
 - Random seeds with `srand()`
 - The `time()` function
+- File manipulation
 - Functions from the C standard library
 - Basic Git and GitHub project organization
 
@@ -117,7 +125,7 @@ I can make the projects more advanced by adding:
 - [x] Different number ranges
 - [x] Difficulty levels
 - [x] Difficulty-based scoring
-- [ ] High score system
+- [x] High score system
 - [ ] Multiple rounds
 
 ## License

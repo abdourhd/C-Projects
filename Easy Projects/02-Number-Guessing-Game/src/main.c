@@ -3,11 +3,19 @@
 #include <time.h>
 #define MAX 10
 
-int N, G, C, S, R;
+int N, G, C, S, R, Hs;
 
 int main() {
 
     srand(time(NULL));
+
+    FILE *file = fopen("../data/highscore.txt", "r");
+    if(file != NULL) {
+        fscanf(file, "%d", &Hs);
+        fclose(file);
+    } else {
+        Hs = 0;
+    }
 
     printf("=== Number Guessing Game ===\n");
 
@@ -48,6 +56,17 @@ int main() {
             S -= R;
         } else {
             printf("\nCongratulations! You guessed the number!!\nThe number was %d.\nNumber of attempts: %d\n\nYour score: %d points\n", N, C, S);
+            if(S > Hs) {
+                Hs = S;
+                printf("New high score!: %d\n", Hs);
+                FILE *file = fopen("../data/highscore.txt", "w");
+                if(file != NULL) {
+                    fprintf(file, "%d", Hs);
+                    fclose(file);
+                }
+            } else {
+                printf("High score: %d\n", Hs);
+            }
             break;
         }
         
