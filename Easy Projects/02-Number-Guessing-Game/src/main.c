@@ -3,18 +3,39 @@
 #include <time.h>
 #define MAX 10
 
-int N, G, C, S;
+int N, G, C, S, R;
 
 int main() {
 
     srand(time(NULL));
-    N = rand() % 100 + 1;
 
     printf("=== Number Guessing Game ===\n");
-    printf("I have chosen a number between 1 and 100.\nCan you guess it?\n");
 
-    C = 0;
+    int range;
+    printf("Choose a number range:\n1. [1-50]\n2. [1-100]\n3. [1-500]\n4. [1-1000]\n\nEnter your choice: ");
+    scanf("%d", &range);   
+    switch (range) {
+        case 1:
+            R = 50;
+            break;
+        case 2:
+            R = 100;
+            break;
+        case 3:
+            R = 500;
+            break;
+        case 4:
+            R = 1000;
+            break;
+        default:
+            break;
+    }
+
+    printf("I have chosen a number between 1 and %d.\nCan you guess it?\n", R);
+
+    N = rand() % R + 1;
     S = 100 * MAX;
+    C = 0;
     do {
         printf("\nenter a number: ");
         scanf("%d", &G);
