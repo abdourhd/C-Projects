@@ -13,6 +13,7 @@ The player choose a difficulty between easy, medium, hard and extreme. The progr
 - Attempt counter
 - Score counter
 - High score diplay
+- Multiple rounds
 - Simple command-line interface
 
 ## Technologies
@@ -30,7 +31,7 @@ The player choose a difficulty between easy, medium, hard and extreme. The progr
 │   └── main.c
 │
 ├── data/
-│   └── highscore.c
+│   └── highscore.txt
 │
 ├── .gitignore
 └── README.md
@@ -49,6 +50,7 @@ The player choose a difficulty between easy, medium, hard and extreme. The progr
 9. The score is displayed at the end.
 10. The high score is displayed at the end
 11. If the number of attempts reach it's limit the game end with a loss.
+12. The player can retry another round or exit.
 
 ## Compilation
 
@@ -76,6 +78,7 @@ guessing_game.exe
 
 ```text
 === Number Guessing Game ===
+Round: 2
 I have chosen a number between 1 and 100.
 Can you guess it?
 
@@ -98,6 +101,9 @@ The number was 35.
 Number of attempts: 5
 Score: 500
 HighScore: 900
+
+1. Retry
+0. Exit
 ```
 
 ## Concepts Practiced
