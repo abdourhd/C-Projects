@@ -9,6 +9,14 @@ int main() {
 
     srand(time(NULL));
 
+    FILE *file = fopen("../data/highscore.txt", "r");
+    if(file != NULL) {
+        fscanf(file, "%d", &Hs);
+        fclose(file);
+    } else {
+        Hs = 0;
+    }
+
     printf("=== Number Guessing Game ===\n");
 
     int difficulty;
@@ -50,9 +58,14 @@ int main() {
             printf("\nCongratulations! You guessed the number!!\nThe number was %d.\nNumber of attempts: %d\n\nYour score: %d points\n", N, C, S);
             if(S > Hs) {
                 Hs = S;
-                printf("\nNew high score!: %d", Hs);
+                printf("New high score!: %d\n", Hs);
+                FILE *file = fopen("../data/highscore.txt", "w");
+                if(file != NULL) {
+                    fprintf(file, "%d", Hs);
+                    fclose(file);
+                }
             } else {
-                printf("High score: %d", Hs);
+                printf("High score: %d\n", Hs);
             }
             break;
         }
