@@ -11,10 +11,10 @@ int main() {
 
     printf("=== Number Guessing Game ===\n");
 
-    int range;
+    int difficulty;
     printf("Choose a difficulty:\n1. Easy   [1-50]\n2. Medium   [1-100]\n3. Hard   [1-500]\n4. Extreme   [1-1000]\n\nEnter your choice: ");
-    scanf("%d", &range);   
-    switch (range) {
+    scanf("%d", &difficulty);   
+    switch (difficulty) {
         case 1:
             R = 50;
             break;
