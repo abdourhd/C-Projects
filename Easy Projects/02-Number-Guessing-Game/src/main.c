@@ -3,7 +3,7 @@
 #include <time.h>
 #define MAX 10
 
-int N, G, C, S, R;
+int N, G, C, S, R, Hs;
 
 int main() {
 
@@ -48,6 +48,12 @@ int main() {
             S -= R;
         } else {
             printf("\nCongratulations! You guessed the number!!\nThe number was %d.\nNumber of attempts: %d\n\nYour score: %d points\n", N, C, S);
+            if(S > Hs) {
+                Hs = S;
+                printf("\nNew high score!: %d", Hs);
+            } else {
+                printf("High score: %d", Hs);
+            }
             break;
         }
         
