@@ -9,7 +9,7 @@ int main() {
 
     srand(time(NULL));
 
-    FILE *file = fopen("../data/highscore.txt", "r");
+    FILE *file = fopen("./data/highscore.txt", "r");
     if(file != NULL) {
         fscanf(file, "%d", &Hs);
         fclose(file);
@@ -62,7 +62,7 @@ int main() {
                 if(S > Hs) {
                     Hs = S;
                     printf("\nNew high score!: %d points\n", Hs);
-                    FILE *file = fopen("../data/highscore.txt", "w");
+                    FILE *file = fopen("./data/highscore.txt", "w");
                     if(file != NULL) {
                         fprintf(file, "%d", Hs);
                         fclose(file);
@@ -83,8 +83,8 @@ int main() {
         Round++;
     } while(Exit == 1);
 
-    printf("Total score: %d points", S);
-    printf("High score: %d points", Hs);
+    printf("\nTotal score: %d points\n", S);
+    printf("High score: %d points\n", Hs);
 
     return 0;
 }
