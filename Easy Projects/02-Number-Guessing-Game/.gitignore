@@ -7,14 +7,13 @@
 *.o
 *.obj
 
-# Debug files
-*.dSYM/
-*.pdb
-
 # Build directories
 build/
 bin/
 dist/
+
+# Local game data
+data/highscore.txt
 
 # IDE / editor files
 .vscode/

@@ -82,9 +82,9 @@ int main() {
         scanf("%d", &Exit);
         Round++;
     } while(Exit == 1);
-    
+
     printf("Total score: %d points", S);
-    ptintf("High score: %d points", Hs);
+    printf("High score: %d points", Hs);
 
     return 0;
 }
