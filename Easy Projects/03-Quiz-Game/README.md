@@ -81,12 +81,12 @@ quiz.exe
 ```text
 === C Quiz Game ===
 
-What is 2 + 2?
+1. What is 2 + 2?
 
-1. 3
-2. 4
-3. 5
-4. 6
+A. 3
+B. 4
+C. 5
+D. 6
 
 Your answer: 2
 
