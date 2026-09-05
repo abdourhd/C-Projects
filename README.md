@@ -6,7 +6,7 @@ The goal of this repository is to progressively improve my understanding of **C 
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 C-Projects/
@@ -171,7 +171,7 @@ Advanced projects focused on **systems programming, networking, memory managemen
 
 ---
 
-# 📊 Difficulty Progression
+# Difficulty Progression
 
 ```text
                     C PROJECTS
@@ -201,7 +201,7 @@ Advanced projects focused on **systems programming, networking, memory managemen
 
 ---
 
-# 🛠️ Tools
+# Tools
 
 The projects in this repository primarily use:
 
@@ -217,7 +217,7 @@ Some projects may use additional libraries or Linux-specific APIs.
 
 ---
 
-# 📁 Project Structure
+# Project Structure
 
 Each project will generally follow a structure similar to:
 
@@ -243,7 +243,7 @@ Small projects may use a simpler structure.
 
 ---
 
-# 🎯 Goals
+# Goals
 
 This repository is built to progressively develop my C programming skills.
 
@@ -262,7 +262,7 @@ This repository is built to progressively develop my C programming skills.
 
 ---
 
-# 📈 Progress
+# Progress
 
 ## Easy Projects
 
@@ -320,7 +320,7 @@ This repository is built to progressively develop my C programming skills.
 
 ---
 
-# 📚 Learning Approach
+# Learning Approach
 
 Projects are organized from **Easy → Medium → Hard**.
 
@@ -338,7 +338,7 @@ The objective is to complete projects progressively rather than jumping directly
 
 ---
 
-# 📜 License
+# License
 
 This repository is primarily intended for **educational and portfolio purposes**.
 

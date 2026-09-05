@@ -4,6 +4,8 @@ A simple number guessing game written in **C**.
 
 The player choose a difficulty between easy, medium, hard and extreme. The program randomly selects a number between 1 and a number defined by the choosen difficulty, and the player has to guess the number. After every guess, the program tells the player whether their guess is too high or too low, if the player got too many wrong guess, he will lose, other wise he will win and get a score based on the number of attempts to guess the number.
 
+---
+
 ## Features
 
 - Random number generation
@@ -16,11 +18,15 @@ The player choose a difficulty between easy, medium, hard and extreme. The progr
 - Multiple rounds
 - Simple command-line interface
 
+---
+
 ## Technologies
 
-- C
+- **C**
 - Standard C Library
 - GCC or another C compiler
+
+---
 
 ## Project Structure
 
@@ -37,6 +43,8 @@ The player choose a difficulty between easy, medium, hard and extreme. The progr
 └── README.md
 ```
 
+---
+
 ## How It Works
 
 1. The user enter a difficulty. (ex: Easy)
@@ -52,27 +60,33 @@ The player choose a difficulty between easy, medium, hard and extreme. The progr
 11. If the number of attempts reach it's limit the game end with a loss.
 12. The player can retry another round or exit.
 
+---
+
 ## Compilation
 
 Using GCC:
 
 ```bash
-gcc src/main.c -o guessing_game
+gcc src/main.c -o numguess
 ```
 
-## Running the Program
+---
+
+## How to Run
 
 ### Windows
 
 ```bash
-guessing_game.exe
+numguess.exe
 ```
 
 ### Linux / macOS
 
 ```bash
-./guessing_game
+./numguess
 ```
+
+---
 
 ## Example
 
@@ -106,6 +120,8 @@ HighScore: 900
 0. Exit
 ```
 
+---
+
 ## Concepts Practiced
 
 This project helps practice:
@@ -122,7 +138,9 @@ This project helps practice:
 - Functions from the C standard library
 - Basic Git and GitHub project organization
 
-## Possible Improvements
+---
+
+## Future Improvements
 
 I can make the projects more advanced by adding:
 
@@ -133,6 +151,16 @@ I can make the projects more advanced by adding:
 - [x] Difficulty-based scoring
 - [x] High score system
 - [x] Multiple rounds
+
+---
+
+## Author
+
+**Abdou**
+
+- GitHub: [abdourhd](https://github.com/abdourhd)
+
+---
 
 ## License
 

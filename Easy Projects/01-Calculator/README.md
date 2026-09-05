@@ -6,7 +6,7 @@ The program allows the user to perform basic arithmetic operations through a ter
 
 ---
 
-## 📌 Features
+## Features
 
 - Addition
 - Subtraction
@@ -18,19 +18,15 @@ The program allows the user to perform basic arithmetic operations through a ter
 
 ---
 
-## 🧠 Concepts Practiced
+## Technologies
 
-- Variables and data types
-- Functions
-- `switch` statements
-- Loops
-- User input
-- Input validation
-- Arithmetic operators
+- **C**
+- Standard C Library
+- GCC or another C compiler
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 01-Calculator/
@@ -44,15 +40,7 @@ The program allows the user to perform basic arithmetic operations through a ter
 
 ---
 
-## ⚙️ Requirements
-
-- GCC
-- A terminal
-- Linux, macOS, or Windows with a C compiler
-
----
-
-## 🔨 Compilation
+## Compilation
 
 Using GCC:
 
@@ -62,21 +50,23 @@ gcc src/main.c -o calculator
 
 ---
 
-## ▶️ Usage
+## Run the program
 
-Run the program:
-
-```bash
-./calculator
-```
-
-On Windows:
+### Windows
 
 ```bash
 calculator.exe
 ```
 
-Example:
+### Linux / macOS
+
+```bash
+./calculator
+```
+
+---
+
+## Example
 
 ```text
 ========================
@@ -92,7 +82,19 @@ Result: 15
 
 ---
 
-## 🚀 Future Improvements
+## Concepts Practiced
+
+- Variables and data types
+- Functions
+- `switch` statements
+- Loops
+- User input
+- Input validation
+- Arithmetic operators
+
+---
+
+## Future Improvements
 
 - [x] Add more mathematical operations
 - [ ] Add scientific calculations
@@ -102,6 +104,14 @@ Result: 15
 
 ---
 
-## 📚 What I Learned
+## Author
 
-This project helped me practice the fundamentals of C, particularly functions, control flow, user input, and error handling.
+**Abdou**
+
+- GitHub: [abdourhd](https://github.com/abdourhd)
+
+---
+
+## License
+
+This project is open-source and available for educational purposes.
