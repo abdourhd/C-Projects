@@ -118,7 +118,7 @@ This project is useful for practicing several fundamental C concepts:
 
 Possible features to add:
 
-- [ ] Add more questions
+- [x] Add more questions
 - [ ] Randomize questions
 - [ ] Add difficulty levels
 - [ ] Add a high-score system
