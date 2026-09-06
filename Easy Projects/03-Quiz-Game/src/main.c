@@ -1,8 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int answer, score = 0;
 
 int main() {
+
     //Questions
     char *questions[] = { 
         "What is the capital of France?", 
@@ -57,23 +60,39 @@ int main() {
     //Correct Answers
     int correct[] = {3, 2, 4, 4, 1, 3, 2, 3, 3, 1, 2, 3, 4, 3, 1, 4, 2, 2, 4, 3};
 
+    //Randomize the Questions
+    srand(time(NULL));
+    
+    int indexes[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+
+    for (int i = num - 1; i > 0; i--) {
+        int j = rand() % (i + 1);
+        int temp = indexes[i];
+        indexes[i] = indexes[j];
+        indexes[j] = temp;
+    }
+
     //Start of the Quiz
     printf("=== Quiz Game ===\n\n");
 
     int i = 0;
     do {
-        printf("\n%d- %s\n\n", i+1, questions[i]);
+        int index = indexes[i];
+
+        printf("\n%d- %s\n\n", i+1, questions[index]);
         for (int j = 0; j < 4; j++) {
-            printf("    %s\n", options[i][j]);
+            printf("    %s\n", options[index][j]);
         }
         printf("\nYour answer: ");
         scanf("%d", &answer);
-        if(answer == correct[i]) {
+
+        if(answer == correct[index]) {
             printf("\nCorrect !\n");
             score++;
         } else {
             printf("\nWrong !\n");
         }
+
         i++;
     } while(i < num);
 

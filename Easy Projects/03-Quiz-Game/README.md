@@ -119,7 +119,7 @@ This project is useful for practicing several fundamental C concepts:
 Possible features to add:
 
 - [x] Add more questions
-- [ ] Randomize questions
+- [x] Randomize questions
 - [ ] Add difficulty levels
 - [ ] Add a high-score system
 - [ ] Save scores to a file
