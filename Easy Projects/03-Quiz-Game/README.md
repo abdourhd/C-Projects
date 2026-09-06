@@ -120,7 +120,7 @@ Possible features to add:
 
 - [x] Add more questions
 - [x] Randomize questions
-- [ ] Add difficulty levels
+- [x] Add difficulty levels
 - [ ] Add a high-score system
 - [ ] Save scores to a file
 - [ ] Load questions from a file

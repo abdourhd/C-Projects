@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int answer, score = 0;
+int difficulty, answer, score = 0;
 
 int main() {
 
@@ -62,7 +62,7 @@ int main() {
 
     //Randomize the Questions
     srand(time(NULL));
-    
+
     int indexes[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
 
     for (int i = num - 1; i > 0; i--) {
@@ -74,6 +74,26 @@ int main() {
 
     //Start of the Quiz
     printf("=== Quiz Game ===\n\n");
+
+    printf("=Choose Difficulty=\n\n    1. Easy\n    2. Normal\n    3. Hard\n\nChoose: ");
+    scanf("%d", &difficulty);
+
+    switch (difficulty) {
+        case 1:
+            num = num / 4;
+            break;
+    
+        case 2:
+            num = num / 2;
+            break;
+
+        case 3:
+            break;
+
+        default:
+            printf("error");
+            break;
+    }
 
     int i = 0;
     do {
