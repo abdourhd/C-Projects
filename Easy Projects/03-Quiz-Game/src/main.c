@@ -97,7 +97,7 @@ int main() {
             break;
     }
 
-    FILE *file = fopen("../data/highscore.txt", "r");
+    FILE *file = fopen("./data/highscore.txt", "r");
     if(file != NULL) {
         for (int i = 0; i < difficulty; i++) {
             fscanf(file, "%d", &highscore);
@@ -134,8 +134,8 @@ int main() {
     if(score > highscore) {
         printf("New Highscore!: %d/%d", score, num);
         highscore = score;
-        FILE *temp = fopen("../data/temp.txt", "w");
-        FILE *file = fopen("../data/highscore.txt", "r");
+        FILE *temp = fopen("./data/temp.txt", "w");
+        FILE *file = fopen("./data/highscore.txt", "r");
         if(temp != NULL && file != NULL) {
             switch (difficulty) {
                 case 1:
@@ -166,9 +166,9 @@ int main() {
         fclose(file);
         fclose(temp);
 
-        remove("../data/highscore.txt");
+        remove("./data/highscore.txt");
 
-        if(rename("../data/temp.txt", "../data/highscore.txt") != 0) {
+        if(rename("./data/temp.txt", "./data/highscore.txt") != 0) {
             perror("Error renaming file");
             return 1;
         }        
