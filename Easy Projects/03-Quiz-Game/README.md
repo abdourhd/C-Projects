@@ -11,6 +11,7 @@ The player choose a difficulty and answers multiple-choice questions, at the end
 - Multiple-choice questions
 - Difficulty levels
 - Four answer choices per question
+- Load questions from a file
 - Automatic answer validation
 - Score tracking
 - Highscore system
@@ -54,6 +55,7 @@ The player choose a difficulty and answers multiple-choice questions, at the end
 5. Enter the number corresponding to your answer.
 6. The program tells you whether your answer is correct.
 7. Your score and the highscore are displayed at the end of the quiz.
+8. Choose to replay or exit at the end.
 
 ---
 
@@ -117,6 +119,7 @@ This project is useful for practicing several fundamental C concepts:
 - `for` loops
 - Functions
 - User input with `scanf()`
+- Files management
 - Basic program flow
 - Score calculation
 
@@ -132,7 +135,7 @@ Possible features to add:
 - [x] Add a high-score system
 - [x] Load questions from a file
 - [x] Add colored terminal output
-- [ ] Add a replay option
+- [x] Add a replay option
 - [ ] Split the project into multiple `.c` and `.h` files
 
 ---
