@@ -36,6 +36,7 @@ The player choose a difficulty and answers multiple-choice questions, at the end
 │   └── main.c
 │
 ├── data/
+│   ├── question.txt
 │   └── highscore.txt
 │
 ├── .gitignore
@@ -129,8 +130,8 @@ Possible features to add:
 - [x] Randomize questions
 - [x] Add difficulty levels
 - [x] Add a high-score system
-- [ ] Load questions from a file
-- [ ] Add colored terminal output
+- [x] Load questions from a file
+- [x] Add colored terminal output
 - [ ] Add a replay option
 - [ ] Split the project into multiple `.c` and `.h` files
 

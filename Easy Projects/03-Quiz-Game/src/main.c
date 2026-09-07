@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 #define MAX 20
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define CYAN "\033[36m"
+#define BOLD "\033[1m"
+#define RESET "\033[0m"
 
 typedef struct {
     char question[200];
@@ -58,9 +65,9 @@ int main() {
 
     
     //Start of the Quiz
-    printf("=== Quiz Game ===\n\n");
+    printf(BLUE BOLD "=== Quiz Game ===" RESET "\n\n");
 
-    printf("=Choose Difficulty=\n\n    1. Easy\n    2. Normal\n    3. Hard\n\nChoose: ");
+    printf(BOLD "=Choose Difficulty=" RESET "\n\n" GREEN "    1. Easy" RESET "\n" YELLOW "    2. Normal" RESET "\n" RED "    3. Hard" RESET"\n\nChoose: ");
     scanf("%d", &difficulty);
 
     switch (difficulty) {
@@ -95,28 +102,28 @@ int main() {
     do {
         int index = indexes[i];
 
-        printf("\n%d- %s\n", i+1, questions[index].question);
+        printf("\n" YELLOW "%d- %s" RESET "\n", i+1, questions[index].question);
         for (int j = 0; j < 4; j++) {
-            printf("    %d. %s", j+1, questions[index].options[j]);
+            printf(CYAN "    %d. %s" RESET, j+1, questions[index].options[j]);
         }
         printf("\nYour answer: ");
         scanf("%d", &answer);
 
         if(answer == questions[index].correct) {
-            printf("\nCorrect !\n");
+            printf("\n" GREEN "Correct !" RESET "\n");
             score++;
         } else {
-            printf("\nWrong !\n");
+            printf("\n" RED "Wrong !" RESET "\n");
         }
 
         i++;
     } while(i < num);
 
     //End of Quiz
-    printf("\n=== Quiz Finished ===\n");
+    printf("\n" BLUE BOLD "=== Quiz Finished ===" RESET "\n\n");
 
     if(score > highscore) {
-        printf("New Highscore!: %d/%d\n", score, num);
+        printf(GREEN "New Highscore!: %d/%d" RESET "\n", score, num);
         highscore = score;
         FILE *file = fopen("./data/highscore.txt", "r");
         FILE *temp = fopen("./data/temp.txt", "w");
