@@ -1,64 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#define MAX 20
 
-int answer, score = 0, highscore, temp, difficulty;
+typedef struct {
+    char question[200];
+    char options[4][100];
+    int correct;
+} Question;
+
+int answer, score = 0, score1, score2, score3, highscore, difficulty;
 
 int main() {
 
     //Questions
-    char *questions[] = { 
-        "What is the capital of France?", 
-        "Which planet is known as the Red Planet?", 
-        "Who wrote Romeo and Juliet?",
-        "What is the largest ocean on Earth?",
-        "What is the chemical symbol for gold?",
-        "How many continents are there on Earth?",
-        "Which country is the home of the pyramid of Giza?",
-        "What is the fastest land animal?",
-        "Which language has the most native speakers?",
-        "What is the hardest natural substance on earth?",
-        "Which gas do plants absorb from the atmosphere during photosynthesis?",
-        "Who painted the Mona Lisa?",
-        "Which is the smallest planet in our solar system?",
-        "What is the main ingredient in guacamole?",
-        "Which element has the chemical symbol 'O'?",
-        "Which is the tallest mountain in the world above sea level?",
-        "What is the largest mammal in the world?",
-        "Which country is known as the Land of the Rising Sun?",
-        "Which instrument has 88 keys?",
-        "What is the largest organ in the human body?"
-    };
+    Question questions[MAX];
+    FILE *question = fopen("./data/question.txt", "r");
+    if (question == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
+
+    // Load Questions
+    for(int i = 0; i < MAX; i++) {
+        Question *q = &questions[i];
+        // Read Question
+        if (fgets(q->question, sizeof(q->question), question) == NULL)
+            break;
+
+        // Read 4 options
+        for (int j = 0; j < 4; j++) {
+            fgets(q->options[j], sizeof(q->options[j]), question);
+        }
+
+        // Read correct answer
+        fscanf(question, "%d", &q->correct);
+
+        // Remove newline left by fscanf/fgets interaction
+        fgetc(question);
+    }
+    fclose(question);
 
     //Number of Questions
-    int num = sizeof(questions) / sizeof(questions[0]);
-
-    //Options
-    char *options[][4] = {
-        {"1. Berlin", "2. Madrid", "3. Paris", "4. London"},
-        {"1. Earth", "2. Mars", "3. Jupiter", "4. Venus"},
-        {"1. Charles Dickens", "2. Jane Austen", "3. Mark Twain", "4. William Shakespeare"},
-        {"1. Atlantic Ocean", "2. Indian Ocean", "3. Arctic Ocean", "4. Pacific Ocean"},
-        {"1. Au", "2. Ag", "3. Fe", "4. Pb"},
-        {"1. 5", "2. 6", "3. 7", "4. 8"},
-        {"1. Mexico", "2. Egypt", "3. Peru", "4. India"},
-        {"1. Lion", "2. Horse", "3. Cheetah", "4. Elephant"},
-        {"1. Spanish", "2. English", "3. Mandarin", "4. Hindi"},
-        {"1. Diamond", "2. Gold", "3. Iron", "4. Platine"},
-        {"1. Oxygen", "2. Carbon Dioxide", "3. Nitrogen", "4. Hydrogen"},
-        {"1. Vincent van Gogh", "2. Pablo Picasso", "3. Leonardo da Vinci", "4. Claude Monet"},
-        {"1. Mars", "2. Venus", "3. Neptune", "4. Mercury"},
-        {"1. Tomato", "2. Onion", "3. Avocado", "4. Lime"},
-        {"1. Oxygen", "2. Gold", "3. Osmium", "4. Oganesson"},
-        {"1. K2", "2. Kilimanjaro", "3. Denali", "4. Mount Everest"},
-        {"1. African Elephant", "2. Blue Whale", "3. Giraffe", "4. Hippopotamus"},
-        {"1. China", "2. Japan", "3. South Korea", "4. North Korea"},
-        {"1. Guitar", "2. Violin", "3. Flute", "4. Piano"},
-        {"1. Heart", "2. Liver", "3. Skin", "4. Lungs"}
-    };
-
-    //Correct Answers
-    int correct[] = {3, 2, 4, 4, 1, 3, 2, 3, 3, 1, 2, 3, 4, 3, 1, 4, 2, 2, 4, 3};
+    int num = MAX;
 
     //Randomize the Questions
     srand(time(NULL));
@@ -111,14 +95,14 @@ int main() {
     do {
         int index = indexes[i];
 
-        printf("\n%d- %s\n\n", i+1, questions[index]);
+        printf("\n%d- %s\n", i+1, questions[index].question);
         for (int j = 0; j < 4; j++) {
-            printf("    %s\n", options[index][j]);
+            printf("    %d. %s", j+1, questions[index].options[j]);
         }
         printf("\nYour answer: ");
         scanf("%d", &answer);
 
-        if(answer == correct[index]) {
+        if(answer == questions[index].correct) {
             printf("\nCorrect !\n");
             score++;
         } else {
@@ -128,43 +112,42 @@ int main() {
         i++;
     } while(i < num);
 
-
+    //End of Quiz
     printf("\n=== Quiz Finished ===\n");
 
     if(score > highscore) {
-        printf("New Highscore!: %d/%d", score, num);
+        printf("New Highscore!: %d/%d\n", score, num);
         highscore = score;
-        FILE *temp = fopen("./data/temp.txt", "w");
         FILE *file = fopen("./data/highscore.txt", "r");
-        if(temp != NULL && file != NULL) {
-            switch (difficulty) {
-                case 1:
-                    fprintf(temp, "%d\n", highscore);
-                    fscanf(file, "%d", &temp);
-                    fprintf(temp, "%d\n", temp);
-                    fscanf(file, "%d", &temp);
-                    fprintf(temp, "%d", temp);
-                    break;
-    
-                case 2:
-                    fscanf(file, "%d", &temp);
-                    fprintf(temp, "%d\n", temp);
-                    fprintf(temp, "%d\n", highscore);
-                    fscanf(file, "%d", &temp);
-                    fprintf(temp, "%d", temp);
-                    break;
+        FILE *temp = fopen("./data/temp.txt", "w");
 
-                case 3:
-                    fscanf(file, "%d", &temp);
-                    fprintf(temp, "%d\n", temp);
-                    fscanf(file, "%d", &temp);
-                    fprintf(temp, "%d\n", temp);
-                    fprintf(temp, "%d", highscore);
-                    break;
-            }
+        if(temp == NULL || file == NULL) {
+            perror("Error Opening file");
+            return 1;
         }
-        fclose(file);
+
+        fscanf(file, "%d", &score1);
+        fscanf(file, "%d", &score2);
+        fscanf(file, "%d", &score3);
+        switch (difficulty) {
+            case 1:
+                score1 = highscore;
+                break;
+    
+            case 2:
+                score2 = highscore;
+                break;
+
+            case 3:
+                score3 = highscore;
+                break;
+        }
+        fprintf(temp, "%d\n", score1);
+        fprintf(temp, "%d\n", score2);
+        fprintf(temp, "%d", score3);
+
         fclose(temp);
+        fclose(file);
 
         remove("./data/highscore.txt");
 

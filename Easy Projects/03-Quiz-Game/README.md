@@ -61,7 +61,7 @@ The player choose a difficulty and answers multiple-choice questions, at the end
 Using GCC:
 
 ```bash
-gcc main.c -o quiz
+gcc src/main.c -o quiz
 ```
 
 ---
