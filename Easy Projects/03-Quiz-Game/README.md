@@ -2,16 +2,18 @@
 
 A simple command-line quiz game written in **C**.
 
-The player answers multiple-choice questions and receives a final score based on the number of correct answers.
+The player choose a difficulty and answers multiple-choice questions, at the end he receives a final score based on the number of correct answers and a highscore based on the difficulty.
 
 ---
 
 ## Features
 
 - Multiple-choice questions
+- Difficulty levels
 - Four answer choices per question
 - Automatic answer validation
 - Score tracking
+- Highscore system
 - Final score display
 - Simple command-line interface
 
@@ -33,6 +35,9 @@ The player answers multiple-choice questions and receives a final score based on
 ├── src/
 │   └── main.c
 │
+├── data/
+│   └── highscore.txt
+│
 ├── .gitignore
 └── README.md
 ```
@@ -42,11 +47,12 @@ The player answers multiple-choice questions and receives a final score based on
 ## How it Works
 
 1. Start the program.
-2. Read the question.
-3. Choose one of the four available answers.
-4. Enter the number corresponding to your answer.
-5. The program tells you whether your answer is correct.
-6. Your score is displayed at the end of the quiz.
+2. Choose a difficulty.
+3. Read the question.
+4. Choose one of the four available answers.
+5. Enter the number corresponding to your answer.
+6. The program tells you whether your answer is correct.
+7. Your score and the highscore are displayed at the end of the quiz.
 
 ---
 
@@ -79,7 +85,7 @@ quiz.exe
 ### Example
 
 ```text
-=== C Quiz Game ===
+=== Quiz Game ===
 
 1- What is 2 + 2?
 
@@ -93,7 +99,8 @@ Your answer: 2
 Correct!
 
 === Quiz Finished ===
-Your score: 1/1
+Your score: 1/10
+Highscore: 9/10
 ```
 
 ---
@@ -121,8 +128,7 @@ Possible features to add:
 - [x] Add more questions
 - [x] Randomize questions
 - [x] Add difficulty levels
-- [ ] Add a high-score system
-- [ ] Save scores to a file
+- [x] Add a high-score system
 - [ ] Load questions from a file
 - [ ] Add colored terminal output
 - [ ] Add a replay option

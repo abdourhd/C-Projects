@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int difficulty, answer, score = 0;
+int answer, score = 0, highscore, temp, difficulty;
 
 int main() {
 
@@ -72,6 +72,7 @@ int main() {
         indexes[j] = temp;
     }
 
+    
     //Start of the Quiz
     printf("=== Quiz Game ===\n\n");
 
@@ -92,8 +93,19 @@ int main() {
 
         default:
             printf("error");
+            return 1;
             break;
     }
+
+    FILE *file = fopen("../data/highscore.txt", "r");
+    if(file != NULL) {
+        for (int i = 0; i < difficulty; i++) {
+            fscanf(file, "%d", &highscore);
+        }
+    } else {
+        highscore = 0;
+    }
+    fclose(file);
 
     int i = 0;
     do {
@@ -116,7 +128,52 @@ int main() {
         i++;
     } while(i < num);
 
-    printf("\n=== Quiz Finished ===\nYour score: %d/%d", score, num);
+
+    printf("\n=== Quiz Finished ===\n");
+
+    if(score > highscore) {
+        printf("New Highscore!: %d/%d", score, num);
+        highscore = score;
+        FILE *temp = fopen("../data/temp.txt", "w");
+        FILE *file = fopen("../data/highscore.txt", "r");
+        if(temp != NULL && file != NULL) {
+            switch (difficulty) {
+                case 1:
+                    fprintf(temp, "%d\n", highscore);
+                    fscanf(file, "%d", &temp);
+                    fprintf(temp, "%d\n", temp);
+                    fscanf(file, "%d", &temp);
+                    fprintf(temp, "%d", temp);
+                    break;
+    
+                case 2:
+                    fscanf(file, "%d", &temp);
+                    fprintf(temp, "%d\n", temp);
+                    fprintf(temp, "%d\n", highscore);
+                    fscanf(file, "%d", &temp);
+                    fprintf(temp, "%d", temp);
+                    break;
+
+                case 3:
+                    fscanf(file, "%d", &temp);
+                    fprintf(temp, "%d\n", temp);
+                    fscanf(file, "%d", &temp);
+                    fprintf(temp, "%d\n", temp);
+                    fprintf(temp, "%d", highscore);
+                    break;
+            }
+        }
+        fclose(file);
+        fclose(temp);
+
+        remove("../data/highscore.txt");
+
+        if(rename("../data/temp.txt", "../data/highscore.txt") != 0) {
+            perror("Error renaming file");
+            return 1;
+        }        
+    }
+    printf("Your score: %d/%d\nHighscore: %d/%d", score, num, highscore, num);
 
     return 0;
 }

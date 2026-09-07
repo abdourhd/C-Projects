@@ -12,10 +12,10 @@ int main() {
     FILE *file = fopen("./data/highscore.txt", "r");
     if(file != NULL) {
         fscanf(file, "%d", &Hs);
-        fclose(file);
     } else {
         Hs = 0;
     }
+    fclose(file);
 
     printf("=== Number Guessing Game ===\n");
 
@@ -65,8 +65,8 @@ int main() {
                     FILE *file = fopen("./data/highscore.txt", "w");
                     if(file != NULL) {
                         fprintf(file, "%d", Hs);
-                        fclose(file);
                     }
+                    fclose(file);
                 } else {
                     printf("High score: %d points\n", Hs);
                 }
