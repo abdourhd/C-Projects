@@ -8,6 +8,7 @@
 #include "utils.h"
 #include "quiz.h"
 
+#define BLUE "\033[34m"
 #define BOLD "\033[1m"
 #define RESET "\033[0m"
 
