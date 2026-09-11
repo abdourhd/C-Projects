@@ -8,7 +8,7 @@
 void display_question(Question q) {
     printf(YELLOW "- %s" RESET "\n", q.question);
     for (int j = 0; j < 4; j++) {
-        printf(CYAN "    %d. %s" RESET "\n", j+1, q.options[j]);
+        printf(CYAN "    %d. %s" RESET, j+1, q.options[j]);
     }
 }
 

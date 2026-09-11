@@ -2,7 +2,7 @@
 #include "score.h"
 
 void display_score(int score, int total) {
-    printf("\nYour score %d/%d\n", score, total);
+    printf("\n===Quiz End===\nYour score %d/%d\n", score, total);
 }
 
 int load_highscore(const char *filename, int difficulty) {
@@ -43,7 +43,7 @@ void save_highscore(const char *filename, int score, int difficulty) {
         return;
     }
 
-    int score1, score2, score3, highscore;
+    int score1, score2, score3;
 
     fscanf(file, "%d", &score1);
     fscanf(file, "%d", &score2);
@@ -52,15 +52,15 @@ void save_highscore(const char *filename, int score, int difficulty) {
     switch (difficulty) 
     {
     case 1:
-        score1 = highscore;
+        score1 = score;
         break;
     
     case 2:
-        score2 = highscore;
+        score2 = score;
         break;
 
     case 3:
-        score3 = highscore;
+        score3 = score;
         break;
     }
 
