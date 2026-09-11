@@ -1,6 +1,8 @@
 #ifndef QUESTION_H
 #define QUESTION_H
 
+#define MAX 20
+
 typedef struct {
     char question[200];
     char options[4][200];
