@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include "score.h"
 
+#define GREEN "\033[32m"
+#define BLUE "\033[34m"
+#define BOLD "\033[1m"
+#define RESET "\033[0m"
+
 void display_score(int score, int total) {
-    printf("\n===Quiz End===\nYour score %d/%d\n", score, total);
+    printf("\n" BOLD BLUE "===Quiz End===" RESET "\nYour score: " GREEN "%d" RESET "/" GREEN "%d" RESET "\n", score, total);
 }
 
 int load_highscore(const char *filename, int difficulty) {

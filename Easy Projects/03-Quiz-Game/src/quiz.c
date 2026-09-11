@@ -4,6 +4,8 @@
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 #define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define BOLD "\033[1m"
 #define RESET "\033[0m"
 
 int choice() {
@@ -36,7 +38,7 @@ int num_question(int difficulty, int total) {
 int run_quiz(Question questions[], int num) {
     int score = 0;
 
-    printf("\n===Quiz Start===\n");
+    printf("\n" BOLD BLUE "===Quiz Start===" RESET "\n");
 
     for(int i = 0; i < num; i++) {
         printf("\n" YELLOW "%d" RESET, i+1);
@@ -56,4 +58,11 @@ int run_quiz(Question questions[], int num) {
     }
 
     return score;
+}
+
+int replay() {
+    int Exit;
+    printf("\n" BOLD BLUE "===================" RESET "\n\nChoose:\n\n    0. Exit\n    1. Replay\n\nYour choice: ");
+    scanf("%d", &Exit);
+    return Exit;
 }

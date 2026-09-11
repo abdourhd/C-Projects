@@ -12,35 +12,45 @@
 #define RESET "\033[0m"
 
 int main() {
-    srand(time(NULL));
+    
+    int Exit = 1;
 
-    Question questions[MAX];
+    do {
+        srand(time(NULL));
 
-    int num = load_questions("./data/questions.txt", questions);
+        Question questions[MAX];
 
-    if(num == 0) {
-        printf("failed to load questions");
-        return 1;
-    }
+        int num = load_questions("./data/questions.txt", questions);
 
-    printf("\n" BOLD "=====Quiz Game=====" RESET "\n\n");
+        if(num == 0) {
+            printf("failed to load questions");
+            return 1;
+        }
 
-    int difficulty = choice();
+        printf("\n" BOLD "=====Quiz Game=====" RESET "\n\n");
 
-    shuffle(questions, num);
+        int difficulty = choice();
 
-    num = num_question(difficulty, num);
+        shuffle(questions, num);
 
-    int score = run_quiz(questions, num);
+        num = num_question(difficulty, num);
 
-    display_score(score, num);
+        int score = run_quiz(questions, num);
 
-    int highscore = load_highscore("./data/highscore.txt", difficulty);
+        display_score(score, num);
 
-    if(score > highscore) {
-        printf("New high score!\n");
-        save_highscore("./data/highscore.txt", score, difficulty);
-    }
+        int highscore = load_highscore("./data/highscore.txt", difficulty);
+
+        if(score > highscore) {
+            printf("New high score!\n");
+            save_highscore("./data/highscore.txt", score, difficulty);
+        } else {
+            printf("Highscore: %d/%d\n", highscore, num);
+        }
+
+        Exit = replay();
+
+    } while (Exit = 1);
 
     return 0;
 }
