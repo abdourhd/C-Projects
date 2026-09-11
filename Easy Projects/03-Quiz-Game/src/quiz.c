@@ -24,6 +24,7 @@ int run_quiz(Question questions[], int num) {
         } else {
             printf(RED "\nWrong!\n" RESET);
         }
-
     }
+
+    return score;
 }
