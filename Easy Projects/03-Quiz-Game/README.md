@@ -4,6 +4,8 @@ A simple command-line quiz game written in **C**.
 
 The player choose a difficulty and answers multiple-choice questions, at the end he receives a final score based on the number of correct answers and a highscore based on the difficulty.
 
+The player can replay at the end of the round.
+
 ---
 
 ## Features
@@ -33,12 +35,24 @@ The player choose a difficulty and answers multiple-choice questions, at the end
 ```text
 03-Quiz-Game/
 │
+├── include/
+│   ├── question.h
+│   ├── quiz.h
+│   ├── file.h
+│   ├── score.h
+│   └── utils.h
+│
 ├── src/
-│   └── main.c
+│   ├── main.c
+│   ├── question.c
+│   ├── quiz.c
+│   ├── file.c
+│   ├── score.c
+│   └── utils.c
 │
 ├── data/
-│   ├── question.txt
-│   └── highscore.txt
+│   ├── highscore.txt
+│   └── questions.txt
 │
 ├── .gitignore
 └── README.md
@@ -64,7 +78,7 @@ The player choose a difficulty and answers multiple-choice questions, at the end
 Using GCC:
 
 ```bash
-gcc src/main.c -o quiz
+gcc src/main.c src/quiz.c src/question.c src/file.c src/score.c src/utils.c -Iinclude -o quiz
 ```
 
 ---
@@ -88,7 +102,17 @@ quiz.exe
 ### Example
 
 ```text
-=== Quiz Game ===
+===== Quiz Game =====
+
+Quiz difficulty:
+
+    1. Easy
+    2. Medium
+    3. Hard
+
+Your choice: 1
+
+=== Quiz Start ===
 
 1- What is 2 + 2?
 
@@ -102,8 +126,8 @@ Your answer: 2
 Correct!
 
 === Quiz Finished ===
-Your score: 1/10
-Highscore: 9/10
+Your score: 1/5
+Highscore: 4/5
 ```
 
 ---
@@ -121,7 +145,7 @@ This project is useful for practicing several fundamental C concepts:
 - User input with `scanf()`
 - Files management
 - Basic program flow
-- Score calculation
+- Header files manipulation
 
 ---
 
@@ -136,7 +160,7 @@ Possible features to add:
 - [x] Load questions from a file
 - [x] Add colored terminal output
 - [x] Add a replay option
-- [ ] Split the project into multiple `.c` and `.h` files
+- [x] Split the project into multiple `.c` and `.h` files
 
 ---
 
