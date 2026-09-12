@@ -15,3 +15,7 @@ dist/
 # IDE / editor files
 .vscode/
 .idea/
+
+# Temporary files
+*.tmp
+*.temp

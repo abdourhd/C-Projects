@@ -2,7 +2,7 @@
 #include "temperature.h"
 
 int display_temperature() {
-    printf("\n\n--- Temperature ---\n1. Celsius → Fahrenheit\n2. Fahrenheit → Celsius\n3. Celsius → Kelvin\n4. Kelvin → Celsius\n5. Fahrenheit → Kelvin\n6. Kelvin → Fahrenheit\n\nChoose a conversion: ");
+    printf("\n--- Temperature ---\n1. Celsius -> Fahrenheit\n2. Fahrenheit -> Celsius\n3. Celsius -> Kelvin\n4. Kelvin -> Celsius\n5. Fahrenheit -> Kelvin\n6. Kelvin -> Fahrenheit\n\nChoose a conversion: ");
 
     int conversion;
     scanf("%d", &conversion);

@@ -2,7 +2,7 @@
 #include "volume.h"
 
 int display_volume() {
-    printf("\n\n--- Volume ---\n1. Liter → Milliliter\n2. Milliliter → Liter\n3. Liter → Cubic Meter\n4. Cubic Meter → Liter\n5. Liter → Gallon\n6. Gallon → Liter\n\nChoose a conversion: ");
+    printf("\n--- Volume ---\n1. Liter -> Milliliter\n2. Milliliter -> Liter\n3. Liter -> Cubic Meter\n4. Cubic Meter -> Liter\n5. Liter -> Gallon\n6. Gallon -> Liter\n\nChoose a conversion: ");
 
     int conversion;
     scanf("%d", &conversion);

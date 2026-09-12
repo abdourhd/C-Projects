@@ -6,7 +6,7 @@ void display_title() {
 }
 
 int display_menu() {
-    printf("\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n\n0. Exit\n\nChoose a category: ");
+    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n\n0. Exit\n\nChoose a category: ");
 
     int category;
     scanf("%d", &category);

@@ -269,7 +269,7 @@ This repository is built to progressively develop my C programming skills.
 - [x] Calculator
 - [x] Number Guessing Game
 - [x] Quiz Game
-- [ ] Unit Converter
+- [x] Unit Converter
 - [ ] Contact Book
 - [ ] Tic-Tac-Toe
 - [ ] Rock Paper Scissors

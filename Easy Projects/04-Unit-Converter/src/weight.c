@@ -2,7 +2,7 @@
 #include "weight.h"
 
 int display_weight() {
-    printf("\n\n--- Weight ---\n1. Gram → Kilogram\n2. Kilogram → Gram\n3. Gram → Milligram\n4. Milligram → Gram\n5. Kilogram → Pound\n6. Pound → Kilogram\n\nChoose a conversion: ");
+    printf("\n--- Weight ---\n1. Gram -> Kilogram\n2. Kilogram -> Gram\n3. Gram -> Milligram\n4. Milligram -> Gram\n5. Kilogram -> Pound\n6. Pound -> Kilogram\n\nChoose a conversion: ");
 
     int conversion;
     scanf("%d", &conversion);

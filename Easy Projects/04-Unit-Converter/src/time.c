@@ -2,7 +2,7 @@
 #include "time.h"
 
 int display_time() {
-    printf("\n\n--- Time ---\n1. Seconds → Minutes\n2. Minutes → Seconds\n3. Minutes → Hours\n4. Hours → Minutes\n5. Seconds → Hours\n6. Hours → Seconds\n7. Seconds → Day\n8. Day → Seconds\n\nChoose a conversion: ");
+    printf("\n--- Time ---\n1. Seconds -> Minutes\n2. Minutes -> Seconds\n3. Minutes -> Hours\n4. Hours -> Minutes\n5. Seconds -> Hours\n6. Hours -> Seconds\n7. Seconds -> Day\n8. Day -> Seconds\n\nChoose a conversion: ");
 
     int conversion;
     scanf("%d", &conversion);

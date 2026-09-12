@@ -102,7 +102,7 @@ The converter supports several categories of units:
 Using GCC:
 
 ```bash
-gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c -Iinclude -o converter
+gcc src/main.c src/display.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c -Iinclude -o converter
 ```
 
 ---

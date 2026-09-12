@@ -2,7 +2,7 @@
 #include "length.h"
 
 int display_length() {
-    printf("\n\n--- Length ---\n1. Meters → Kilometers\n2. Kilometers → Meters\n3. Meters → Feet\n4. Feet → Meters\n5. Kilometers → Miles\n6. Miles → Kilometers\n\nChoose a conversion: ");
+    printf("\n--- Length ---\n1. Meters -> Kilometers\n2. Kilometers -> Meters\n3. Meters -> Feet\n4. Feet -> Meters\n5. Kilometers -> Miles\n6. Miles -> Kilometers\n\nChoose a conversion: ");
 
     int conversion;
     scanf("%d", &conversion);
