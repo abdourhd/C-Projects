@@ -63,24 +63,37 @@ The converter supports several categories of units:
 ```text
 04-Unit-Converter/
 │
-├── src/
-│   ├── main.c
-│   ├── length.c
-│   ├── weight.c
-│   ├── temperature.c
-│   ├── time.c
-│   └── volume.c
-│
 ├── include/
+│   ├── display.h
 │   ├── length.h
 │   ├── weight.h
 │   ├── temperature.h
 │   ├── time.h
 │   └── volume.h
 │
-├── README.md
-└── .gitignore
+├── src/
+│   ├── main.c
+│   ├── display.c
+│   ├── length.c
+│   ├── weight.c
+│   ├── temperature.c
+│   ├── time.c
+│   └── volume.c
+│
+├── .gitignore
+└── README.md
 ```
+
+---
+
+## How it Works
+
+1. Start the program.
+2. Choose a category.
+3. Choose the conversion in that category.
+4. Enter the value of the unit you want to convert.
+5. The program display the value of the unit you wanted.
+6. The program also display the value of the unit you inserted.
 
 ---
 
@@ -89,7 +102,7 @@ The converter supports several categories of units:
 Using GCC:
 
 ```bash
-gcc src/main.c -o converter
+gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c -Iinclude -o converter
 ```
 
 ---
