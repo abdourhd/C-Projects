@@ -26,7 +26,7 @@ The player can replay at the end of the round.
 
 - **C**
 - Standard C Library
-- GCC or another C
+- GCC or another C compiler
 
 ---
 
