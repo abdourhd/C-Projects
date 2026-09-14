@@ -13,6 +13,7 @@ double volume_to_liter(double value, int unit) {
         default: return -1;
     }
 }
+
 double liter_to_volume(double value, int unit) {
     switch(unit) {
         case 1: return value;

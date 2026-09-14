@@ -6,6 +6,7 @@
 #include "time.h"
 #include "volume.h"
 #include "weight.h"
+#include "area.h"
 
 void display_title(void) {
     printf("=============================\n       UNIT CONVERTER       \n=============================\n");
@@ -153,4 +154,31 @@ void weight_menu(void) {
     result = gram_to_weight(gram, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, weight_unit_name(from), result, weight_unit_name(to));
+}
+
+void area_menu(void) {
+    int from, to;
+    double value, squaremeter, result;
+
+    printf("\n=========== AREA ===========\n1. Square meter\n2. Square millimeter\n3. Square centimeter\n4. Square kilometer\n5. Square inch\n6. Square foot\n7. Square yard\n8. Square mile\n9. Hectare\n10. Acre\n\n0. Back\n");
+
+    printf("\nConvert FROM: ");
+    scanf("%d", &from);
+
+    if (from == 0)
+        return;
+
+    printf("Convert TO: ");
+    scanf("%d", &to);
+
+    if (to == 0)
+        return;
+
+    printf("Enter value: ");
+    scanf("%lf", &value);
+
+    squaremeter = area_to_squaremeter(value, from);
+    result = squaremeter_to_area(squaremeter, to);
+
+    printf("\nResult: %.2f %s = %.2f %s\n", value, area_unit_name(from), result, area_unit_name(to));
 }

@@ -28,6 +28,10 @@ int main() {
                 volume_menu();
                 break;
 
+            case 6:
+                area_menu();
+                break;
+
             case 0:
                 printf("\nGoodbye!\n");
                 break;

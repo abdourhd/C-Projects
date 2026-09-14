@@ -8,5 +8,6 @@ void temperature_menu(void);
 void time_menu(void);
 void volume_menu(void);
 void weight_menu(void);
+void area_menu(void);
 
 #endif

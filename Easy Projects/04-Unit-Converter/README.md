@@ -52,6 +52,19 @@ The converter supports several categories of units:
 - Cups (cup)
 - Fluid ounces (fl oz)
 
+### Area
+
+- Square meter (m2)
+- Square millimeter (mm2)
+- Square centimeter (cm2)
+- Square kilometer (km2)
+- Square inch (in2)
+- Square foot (ft2)
+- Square yard (yd2)
+- Square mile (mi2)
+- Hectare (ha)
+- Acre (ac)
+
 ---
 
 ## Technologies
@@ -73,7 +86,8 @@ The converter supports several categories of units:
 │   ├── weight.h
 │   ├── temperature.h
 │   ├── time.h
-│   └── volume.h
+│   ├── volume.h
+│   └── area.h
 │
 ├── src/
 │   ├── main.c
@@ -82,7 +96,8 @@ The converter supports several categories of units:
 │   ├── weight.c
 │   ├── temperature.c
 │   ├── time.c
-│   └── volume.c
+│   ├── volume.c
+│   └── area.c
 │
 ├── .gitignore
 └── README.md
@@ -107,7 +122,7 @@ The converter supports several categories of units:
 Using GCC:
 
 ```bash
-gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c -Iinclude -o converter
+gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/area.c -Iinclude -o converter
 ```
 
 ---
@@ -140,6 +155,8 @@ converter.exe
 3. Temperature
 4. Time
 5. Volume
+6. Area
+
 0. Exit
 
 Choose a category: 1
@@ -157,9 +174,7 @@ Choose a category: 1
 0. Back
 
 Convert FROM: 1
-
 Convert TO: 4
-
 Enter value: 2500
 
 Result: 2500.00 m = 2.50 km
@@ -192,7 +207,7 @@ This project is useful for practicing several fundamental C concepts:
 Possible features to add:
 
 - [x] Add more length conversions
-- [ ] Add area conversions
+- [x] Add area conversions
 - [ ] Add speed conversions
 - [ ] Add pressure conversions
 - [ ] Add energy conversions
