@@ -1,35 +1,42 @@
-#include <stdio.h>
 #include "volume.h"
 
-int display_volume() {
-    printf("\n--- Volume ---\n1. Liter -> Milliliter\n2. Milliliter -> Liter\n3. Liter -> Cubic Meter\n4. Cubic Meter -> Liter\n5. Liter -> Gallon\n6. Gallon -> Liter\n\nChoose a conversion: ");
-
-    int conversion;
-    scanf("%d", &conversion);
-
-    return conversion;
+double volume_to_liter(double value, int unit) {
+    switch(unit) {
+        case 1: return value;
+        case 2: return value / 1000;
+        case 3: return value / 100;
+        case 4: return value / 1000;
+        case 5: return value * 1000;
+        case 6: return value * 3.785;
+        case 7: return value / 4.227;
+        case 8: return value / 33.814;
+        default: return -1;
+    }
+}
+double liter_to_volume(double value, int unit) {
+    switch(unit) {
+        case 1: return value;
+        case 2: return value * 1000;
+        case 3: return value * 100;
+        case 4: return value * 1000;
+        case 5: return value / 1000;
+        case 6: return value / 3.785;
+        case 7: return value * 4.227;
+        case 8: return value * 33.814;
+        default: return -1;
+    }
 }
 
-double liter_to_milliliter(double L) {
-    return L * 1000;
-}
-
-double milliliter_to_liter(double mL) {
-    return mL / 1000;
-}
-
-double liter_to_cubicmeter(double L) {
-    return L / 1000;
-}
-
-double cubicmeter_to_liter(double m3) {
-    return m3 * 1000;
-}
-
-double liter_to_gallon(double L) {
-    return L / 3.785;
-}
-
-double gallon_to_liter(double gal) {
-    return gal * 3.785;
+const char* volume_unit_name(int unit) {
+    switch(unit) {
+        case 1: return "L";
+        case 2: return "mL";
+        case 3: return "cL";
+        case 4: return "cm3";
+        case 5: return "m3";
+        case 6: return "gal";
+        case 7: return "cup";
+        case 8: return "fl oz";
+        default: return "?";
+    }
 }

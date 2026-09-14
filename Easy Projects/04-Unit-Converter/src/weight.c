@@ -1,35 +1,37 @@
-#include <stdio.h>
 #include "weight.h"
 
-int display_weight() {
-    printf("\n--- Weight ---\n1. Gram -> Kilogram\n2. Kilogram -> Gram\n3. Gram -> Milligram\n4. Milligram -> Gram\n5. Kilogram -> Pound\n6. Pound -> Kilogram\n\nChoose a conversion: ");
-
-    int conversion;
-    scanf("%d", &conversion);
-
-    return conversion;
+double weight_to_gram(double value, int unit) {
+    switch(unit) {
+        case 1: return value;
+        case 2: return value / 1000;
+        case 3: return value * 1000;
+        case 4: return value * 1000000;
+        case 5: return value * 28.3495;
+        case 6: return value * 453.592;
+        default: return -1;
+    }
 }
 
-double gram_to_kilogram(double g) {
-    return g / 1000;
+double gram_to_weight(double value, int unit) {
+    switch(unit) {
+        case 1: return value;
+        case 2: return value * 1000;
+        case 3: return value / 1000;
+        case 4: return value / 1000000;
+        case 5: return value / 28.3495;
+        case 6: return value / 453.592;
+        default: return -1;
+    }
 }
 
-double kilogram_to_gram(double kg) {
-    return kg * 1000;
-}
-
-double gram_to_milligram(double g) {
-    return g * 1000;
-}
-
-double milligram_to_gram(double mg) {
-    return mg / 1000;
-}
-
-double gram_to_pound(double g) {
-    return g / 453.592;
-}
-
-double pound_to_gram(double lb) {
-    return lb * 453.592;
+const char* weight_unit_name(int unit) {
+    switch(unit) {
+        case 1: return "g";
+        case 2: return "mg";
+        case 3: return "kg";
+        case 4: return "t";
+        case 5: return "oz";
+        case 6: return "lb";
+        default: return "?";
+    }
 }

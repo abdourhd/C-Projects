@@ -1,35 +1,43 @@
-#include <stdio.h>
 #include "length.h"
 
-int display_length() {
-    printf("\n--- Length ---\n1. Meters -> Kilometers\n2. Kilometers -> Meters\n3. Meters -> Feet\n4. Feet -> Meters\n5. Kilometers -> Miles\n6. Miles -> Kilometers\n\nChoose a conversion: ");
-
-    int conversion;
-    scanf("%d", &conversion);
-
-    return conversion;
+double length_to_meter(double value, int unit) {
+    switch(unit) {
+        case 1: return value;
+        case 2: return value / 1000;
+        case 3: return value / 100;
+        case 4: return value * 1000;
+        case 5: return value * 39.3701;
+        case 6: return value * 3.281;
+        case 7: return value * 1.09361;
+        case 8: return value / 1609.34;
+        default: return -1;
+    }
 }
 
-double meter_to_kilometer(double m) {
-    return (m / 1000);
+double meter_to_length(double value, int unit) {
+    switch(unit) {
+        case 1: return value;
+        case 2: return value * 1000;
+        case 3: return value * 100;
+        case 4: return value / 1000;
+        case 5: return value / 39.3701;
+        case 6: return value / 3.281;
+        case 7: return value / 1.09361;
+        case 8: return value * 1609.34;
+        default: return -1;
+    }
 }
 
-double kilometer_to_meter(double km) {
-    return (km * 1000);
-}
-
-double meter_to_foot(double m) {
-    return (m * 3.281);
-}
-
-double foot_to_meter(double ft) {
-    return (ft / 3.281);
-}
-
-double meter_to_mile(double m) {
-    return (m / 1609.34);
-}
-
-double mile_to_meter(double mi) {
-    return (mi * 1609.34);
+const char* length_unit_name(int unit) {
+    switch (unit) {
+        case 1: return "m";
+        case 2: return "mm";
+        case 3: return "cm";
+        case 4: return "km";
+        case 5: return "in";
+        case 6: return "ft";
+        case 7: return "yd";
+        case 8: return "mi";
+        default: return "?";
+    }
 }

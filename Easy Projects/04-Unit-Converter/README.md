@@ -10,9 +10,9 @@ The converter supports several categories of units:
 
 ### Length
 
+- Meters (m)
 - Millimeters (mm)
 - Centimeters (cm)
-- Meters (m)
 - Kilometers (km)
 - Inches (in)
 - Feet (ft)
@@ -21,9 +21,10 @@ The converter supports several categories of units:
 
 ### Weight / Mass
 
-- Milligrams (mg)
 - Grams (g)
+- Milligrams (mg)
 - Kilograms (kg)
+- Metric tons (t)
 - Ounces (oz)
 - Pounds (lb)
 
@@ -31,7 +32,7 @@ The converter supports several categories of units:
 
 - Celsius (°C)
 - Fahrenheit (°F)
-- Kelvin (K)
+- Kelvin (°K)
 
 ### Time
 
@@ -42,10 +43,13 @@ The converter supports several categories of units:
 
 ### Volume
 
-- Milliliters (mL)
 - Liters (L)
+- Milliliters (mL)
+- Centiliters (cL)
+- Cubic centimeter (cm3)
+- Cubic meter (m3)
 - Gallons (gal)
-- Cups
+- Cups (cup)
 - Fluid ounces (fl oz)
 
 ---
@@ -64,7 +68,7 @@ The converter supports several categories of units:
 04-Unit-Converter/
 │
 ├── include/
-│   ├── display.h
+│   ├── converter.h
 │   ├── length.h
 │   ├── weight.h
 │   ├── temperature.h
@@ -73,7 +77,7 @@ The converter supports several categories of units:
 │
 ├── src/
 │   ├── main.c
-│   ├── display.c
+│   ├── converter.c
 │   ├── length.c
 │   ├── weight.c
 │   ├── temperature.c
@@ -90,10 +94,11 @@ The converter supports several categories of units:
 
 1. Start the program.
 2. Choose a category.
-3. Choose the conversion in that category.
-4. Enter the value of the unit you want to convert.
-5. The program display the value of the unit you wanted.
-6. The program also display the value of the unit you inserted.
+3. Choose the unit you want to convert from.
+4. Choose the unit you want to convert to.
+5. Enter the value of the unit you want to convert.
+6. The program display the value of the unit you wanted.
+7. The program also display the value of the unit you inserted.
 
 ---
 
@@ -102,7 +107,7 @@ The converter supports several categories of units:
 Using GCC:
 
 ```bash
-gcc src/main.c src/display.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c -Iinclude -o converter
+gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c -Iinclude -o converter
 ```
 
 ---
@@ -139,15 +144,21 @@ converter.exe
 
 Choose a category: 1
 
---- Length ---
-1. Meters → Kilometers
-2. Kilometers → Meters
-3. Meters → Feet
-4. Feet → Meters
-5. Kilometers → Miles
-6. Miles → Kilometers
+========== LENGTH ==========
+1. Meters
+2. Millimeter
+3. Centimeter
+4. Kilometer
+5. Inch
+6. Foot
+7. Yard
+8. Miles
 
-Choose a conversion: 1
+0. Back
+
+Convert FROM: 1
+
+Convert TO: 4
 
 Enter value: 2500
 
@@ -180,7 +191,7 @@ This project is useful for practicing several fundamental C concepts:
 
 Possible features to add:
 
-- [ ] Add more length conversions
+- [x] Add more length conversions
 - [ ] Add area conversions
 - [ ] Add speed conversions
 - [ ] Add pressure conversions
@@ -189,7 +200,7 @@ Possible features to add:
 - [ ] Add currency conversion
 - [ ] Add input validation
 - [ ] Add conversion history
-- [ ] Add a more advanced menu system
+- [x] Add a more advanced menu system
 - [ ] Add colored terminal output
 - [ ] Improve error handling
 

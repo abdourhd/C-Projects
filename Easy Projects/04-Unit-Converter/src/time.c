@@ -1,35 +1,31 @@
-#include <stdio.h>
 #include "time.h"
 
-int display_time() {
-    printf("\n--- Time ---\n1. Seconds -> Minutes\n2. Minutes -> Seconds\n3. Minutes -> Hours\n4. Hours -> Minutes\n5. Seconds -> Hours\n6. Hours -> Seconds\n7. Seconds -> Day\n8. Day -> Seconds\n\nChoose a conversion: ");
-
-    int conversion;
-    scanf("%d", &conversion);
-
-    return conversion;
+double time_to_second(double value, int unit) {
+    switch(unit) {
+        case 1: return value;
+        case 2: return value * 60;
+        case 3: return value * 3600;
+        case 4: return value * 86400;
+        default: return -1;
+    }
 }
 
-double second_to_minute(double second) {
-    return second / 60;
+double second_to_time(double value, int unit) {
+    switch(unit) {
+        case 1: return value;
+        case 2: return value / 60;
+        case 3: return value / 3600;
+        case 4: return value / 86400;
+        default: return -1;
+    }
 }
 
-double minute_to_second(double minute) {
-    return minute * 60;
-}
-
-double second_to_hour(double second) {
-    return second / 3600;
-}
-
-double hour_to_second(double hour) {
-    return hour * 3600;
-}
-
-double second_to_day(double second) {
-    return second / 86400;
-}
-
-double day_to_second(double day) {
-    return day * 86400;
+const char* time_unit_name(int unit) {
+    switch(unit) {
+        case 1: return "s";
+        case 2: return "min";
+        case 3: return "h";
+        case 4: return "day";
+        default: return "?";
+    }
 }
