@@ -32,6 +32,10 @@ int main() {
                 area_menu();
                 break;
 
+            case 7:
+                speed_menu();
+                break;
+
             case 0:
                 printf("\nGoodbye!\n");
                 break;

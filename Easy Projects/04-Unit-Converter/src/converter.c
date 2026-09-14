@@ -7,13 +7,14 @@
 #include "volume.h"
 #include "weight.h"
 #include "area.h"
+#include "speed.h"
 
 void display_title(void) {
     printf("=============================\n       UNIT CONVERTER       \n=============================\n");
 }
 
 int display_menu(void) {
-    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n\n0. Exit\n\nChoose a category: ");
+    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n\n0. Exit\n\nChoose a category: ");
 
     int category;
     scanf("%d", &category);
@@ -181,4 +182,31 @@ void area_menu(void) {
     result = squaremeter_to_area(squaremeter, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, area_unit_name(from), result, area_unit_name(to));
+}
+
+void speed_menu(void) {
+    int from, to;
+    double value, meterpersecond, result;
+
+    printf("\n=========== SPEED ===========\n1. Meter per second\n2. Kilometer per hour\n3. mile per hour\n4. Foot per second\n5. Knot\n6. Centimeter per second\n7. Kilometer per second\n8. Mile per second\n\n0. Back\n");
+
+    printf("\nConvert FROM: ");
+    scanf("%d", &from);
+
+    if (from == 0)
+        return;
+
+    printf("Convert TO: ");
+    scanf("%d", &to);
+
+    if (to == 0)
+        return;
+
+    printf("Enter value: ");
+    scanf("%lf", &value);
+
+    meterpersecond = speed_to_meterpersecond(value, from);
+    result = meterpersecond_to_speed(meterpersecond, to);
+
+    printf("\nResult: %.2f %s = %.2f %s\n", value, speed_unit_name(from), result, speed_unit_name(to));
 }

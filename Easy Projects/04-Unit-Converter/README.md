@@ -65,6 +65,17 @@ The converter supports several categories of units:
 - Hectare (ha)
 - Acre (ac)
 
+### Speed
+
+- Meter per second (m/s)
+- Kilometer per hour (km/h)
+- Mile per hour (mph)
+- Foot per second (ft/s)
+- Knot (kn)
+- Centimeter per second (cm/s)
+- Kilometer per second (km/s)
+- Mile per second (mi/s)
+
 ---
 
 ## Technologies
@@ -87,6 +98,7 @@ The converter supports several categories of units:
 │   ├── temperature.h
 │   ├── time.h
 │   ├── volume.h
+│   ├── speed.h
 │   └── area.h
 │
 ├── src/
@@ -97,6 +109,7 @@ The converter supports several categories of units:
 │   ├── temperature.c
 │   ├── time.c
 │   ├── volume.c
+│   ├── speed.c
 │   └── area.c
 │
 ├── .gitignore
@@ -122,7 +135,7 @@ The converter supports several categories of units:
 Using GCC:
 
 ```bash
-gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/area.c -Iinclude -o converter
+gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c -Iinclude -o converter
 ```
 
 ---
@@ -156,6 +169,7 @@ converter.exe
 4. Time
 5. Volume
 6. Area
+7. Speed
 
 0. Exit
 
@@ -208,7 +222,7 @@ Possible features to add:
 
 - [x] Add more length conversions
 - [x] Add area conversions
-- [ ] Add speed conversions
+- [x] Add speed conversions
 - [ ] Add pressure conversions
 - [ ] Add energy conversions
 - [ ] Add data-storage conversions (B, KB, MB, GB, TB)
