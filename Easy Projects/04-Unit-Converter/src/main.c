@@ -40,6 +40,10 @@ int main() {
                 pressure_menu();
                 break;
 
+            case 9:
+                energy_menu();
+                break;
+
             case 0:
                 printf("\nGoodbye!\n");
                 break;

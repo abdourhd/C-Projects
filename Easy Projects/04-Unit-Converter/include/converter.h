@@ -11,5 +11,6 @@ void weight_menu(void);
 void area_menu(void);
 void speed_menu(void);
 void pressure_menu(void);
+void energy_menu(void);
 
 #endif

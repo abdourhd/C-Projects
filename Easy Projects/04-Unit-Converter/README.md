@@ -46,22 +46,22 @@ The converter supports several categories of units:
 - Liters (L)
 - Milliliters (mL)
 - Centiliters (cL)
-- Cubic centimeter (cm3)
-- Cubic meter (m3)
+- Cubic centimeter (cm³)
+- Cubic meter (m³)
 - Gallons (gal)
 - Cups (cup)
 - Fluid ounces (fl oz)
 
 ### Area
 
-- Square meter (m2)
-- Square millimeter (mm2)
-- Square centimeter (cm2)
-- Square kilometer (km2)
-- Square inch (in2)
-- Square foot (ft2)
-- Square yard (yd2)
-- Square mile (mi2)
+- Square meter (m²)
+- Square millimeter (mm²)
+- Square centimeter (cm²)
+- Square kilometer (km²)
+- Square inch (in²)
+- Square foot (ft²)
+- Square yard (yd²)
+- Square mile (mi²)
 - Hectare (ha)
 - Acre (ac)
 
@@ -87,6 +87,17 @@ The converter supports several categories of units:
 - PSI (psi)
 - Millimetres of mercury (mmHg)
 
+## Energy
+
+- Joule (J)
+- Kilojoule (kJ)
+- Megajoule (MJ)
+- Calorie (cal)
+- Kilocalorie (kcal)
+- Watt-hour (Wh)
+- Kilowatt-hour (kWh)
+- British thermal unit (BTU)
+
 ---
 
 ## Technologies
@@ -111,6 +122,7 @@ The converter supports several categories of units:
 │   ├── volume.h
 │   ├── speed.h
 │   ├── pressure.h
+│   ├── energy.h
 │   └── area.h
 │
 ├── src/
@@ -123,6 +135,7 @@ The converter supports several categories of units:
 │   ├── volume.c
 │   ├── speed.c
 │   ├── pressure.c
+│   ├── energy.c
 │   └── area.c
 │
 ├── .gitignore
@@ -148,7 +161,7 @@ The converter supports several categories of units:
 Using GCC:
 
 ```bash
-gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c src/pressure.c -Iinclude -o converter
+gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c src/pressure.c src/energy.c -Iinclude -o converter
 ```
 
 ---
@@ -184,6 +197,7 @@ converter.exe
 6. Area
 7. Speed
 8. Pressure
+9. Energy
 
 0. Exit
 
@@ -238,7 +252,7 @@ Possible features to add:
 - [x] Add area conversions
 - [x] Add speed conversions
 - [x] Add pressure conversions
-- [ ] Add energy conversions
+- [x] Add energy conversions
 - [ ] Add data-storage conversions (B, KB, MB, GB, TB)
 - [ ] Add currency conversion
 - [ ] Add input validation

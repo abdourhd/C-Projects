@@ -9,6 +9,7 @@
 #include "area.h"
 #include "speed.h"
 #include "pressure.h"
+#include "energy.h"
 
 void display_title(void) {
     printf("=============================\n       UNIT CONVERTER       \n=============================\n");
@@ -237,4 +238,31 @@ void pressure_menu(void) {
     result = pascal_to_pressure(pascal, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, pressure_unit_name(from), result, pressure_unit_name(to));
+}
+
+void energy_menu(void) {
+    int from, to;
+    double value, joule, result;
+
+    printf("\n========== ENERGY ==========\n1. joule\n2. Kilojoule\n3. Megajoule\n4. Calorie\n5. Kilocalorie\n6. Watt-hour\n7. Kilowatt-hour\n8. British thermal unit\n\n0. Back\n");
+
+    printf("\nConvert FROM: ");
+    scanf("%d", &from);
+
+    if (from == 0)
+        return;
+
+    printf("Convert TO: ");
+    scanf("%d", &to);
+
+    if (to == 0)
+        return;
+
+    printf("Enter value: ");
+    scanf("%lf", &value);
+
+    joule = energy_to_joule(value, from);
+    result = joule_to_energy(joule, to);
+
+    printf("\nResult: %.2f %s = %.2f %s\n", value, energy_unit_name(from), result, energy_unit_name(to));
 }
