@@ -76,6 +76,17 @@ The converter supports several categories of units:
 - Kilometer per second (km/s)
 - Mile per second (mi/s)
 
+### Pressure
+
+- Pascal (pa)
+- Kilopascal (kPa)
+- Megapascal (MPa)
+- Bar (bar)
+- Millibar (mbar)
+- Atmosphere (atm)
+- PSI (psi)
+- Millimetres of mercury (mmHg)
+
 ---
 
 ## Technologies
@@ -99,6 +110,7 @@ The converter supports several categories of units:
 │   ├── time.h
 │   ├── volume.h
 │   ├── speed.h
+│   ├── pressure.h
 │   └── area.h
 │
 ├── src/
@@ -110,6 +122,7 @@ The converter supports several categories of units:
 │   ├── time.c
 │   ├── volume.c
 │   ├── speed.c
+│   ├── pressure.c
 │   └── area.c
 │
 ├── .gitignore
@@ -135,7 +148,7 @@ The converter supports several categories of units:
 Using GCC:
 
 ```bash
-gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c -Iinclude -o converter
+gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c src/pressure.c -Iinclude -o converter
 ```
 
 ---
@@ -170,6 +183,7 @@ converter.exe
 5. Volume
 6. Area
 7. Speed
+8. Pressure
 
 0. Exit
 
@@ -223,7 +237,7 @@ Possible features to add:
 - [x] Add more length conversions
 - [x] Add area conversions
 - [x] Add speed conversions
-- [ ] Add pressure conversions
+- [x] Add pressure conversions
 - [ ] Add energy conversions
 - [ ] Add data-storage conversions (B, KB, MB, GB, TB)
 - [ ] Add currency conversion

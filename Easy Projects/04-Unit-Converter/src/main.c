@@ -36,6 +36,10 @@ int main() {
                 speed_menu();
                 break;
 
+            case 8:
+                pressure_menu();
+                break;
+
             case 0:
                 printf("\nGoodbye!\n");
                 break;

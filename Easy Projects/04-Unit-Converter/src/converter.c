@@ -8,13 +8,14 @@
 #include "weight.h"
 #include "area.h"
 #include "speed.h"
+#include "pressure.h"
 
 void display_title(void) {
     printf("=============================\n       UNIT CONVERTER       \n=============================\n");
 }
 
 int display_menu(void) {
-    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n\n0. Exit\n\nChoose a category: ");
+    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n8. Pressure\n\n0. Exit\n\nChoose a category: ");
 
     int category;
     scanf("%d", &category);
@@ -209,4 +210,31 @@ void speed_menu(void) {
     result = meterpersecond_to_speed(meterpersecond, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, speed_unit_name(from), result, speed_unit_name(to));
+}
+
+void pressure_menu(void) {
+    int from, to;
+    double value, pascal, result;
+
+    printf("\n========= PRESSURE =========\n1. Pascal\n2. Kilopascal\n3. Megapascal\n4. Bar\n5. Millibar\n6. Atmosphere\n7. PSI\n8. Millimetres of mercury\n\n0. Back\n");
+
+    printf("\nConvert FROM: ");
+    scanf("%d", &from);
+
+    if (from == 0)
+        return;
+
+    printf("Convert TO: ");
+    scanf("%d", &to);
+
+    if (to == 0)
+        return;
+
+    printf("Enter value: ");
+    scanf("%lf", &value);
+
+    pascal = pressure_to_pascal(value, from);
+    result = pascal_to_pressure(pascal, to);
+
+    printf("\nResult: %.2f %s = %.2f %s\n", value, pressure_unit_name(from), result, pressure_unit_name(to));
 }

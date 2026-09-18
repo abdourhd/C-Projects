@@ -10,5 +10,6 @@ void volume_menu(void);
 void weight_menu(void);
 void area_menu(void);
 void speed_menu(void);
+void pressure_menu(void);
 
 #endif
