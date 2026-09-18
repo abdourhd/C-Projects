@@ -3,9 +3,9 @@
 double length_to_meter(double value, int unit) {
     switch(unit) {
         case 1: return value;
-        case 2: return value * 1000;
-        case 3: return value * 100;
-        case 4: return value / 1000;
+        case 2: return value / 1000;
+        case 3: return value / 100;
+        case 4: return value * 1000;
         case 5: return value / 39.3701;
         case 6: return value / 3.281;
         case 7: return value / 1.09361;
@@ -17,9 +17,9 @@ double length_to_meter(double value, int unit) {
 double meter_to_length(double value, int unit) {
     switch(unit) {
         case 1: return value;
-        case 2: return value / 1000;
-        case 3: return value / 100;
-        case 4: return value * 1000;
+        case 2: return value * 1000;
+        case 3: return value * 100;
+        case 4: return value / 1000;
         case 5: return value * 39.3701;
         case 6: return value * 3.281;
         case 7: return value * 1.09361;
