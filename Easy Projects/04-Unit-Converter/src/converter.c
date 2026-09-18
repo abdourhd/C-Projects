@@ -16,7 +16,7 @@ void display_title(void) {
 }
 
 int display_menu(void) {
-    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n8. Pressure\n\n0. Exit\n\nChoose a category: ");
+    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n8. Pressure\n9. Energy\n\n0. Exit\n\nChoose a category: ");
 
     int category;
     scanf("%d", &category);
