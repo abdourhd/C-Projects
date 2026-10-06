@@ -127,6 +127,7 @@ The converter supports several categories of units:
 04-Unit-Converter/
 │
 ├── include/
+│   ├── input.h
 │   ├── converter.h
 │   ├── data.h
 │   ├── length.h
@@ -141,6 +142,7 @@ The converter supports several categories of units:
 │
 ├── src/
 │   ├── main.c
+│   ├── input.h
 │   ├── converter.c
 │   ├── data.c
 │   ├── length.c
@@ -166,8 +168,9 @@ The converter supports several categories of units:
 3. Choose the unit you want to convert from.
 4. Choose the unit you want to convert to.
 5. Enter the value of the unit you want to convert.
-6. The program display the value of the unit you wanted.
-7. The program also display the value of the unit you inserted.
+6. The program validate the 4 precedent inputs and can reject them.
+7. The program display the value of the unit you wanted.
+8. The program also display the value of the unit you inserted.
 
 ---
 
@@ -176,7 +179,7 @@ The converter supports several categories of units:
 Using GCC:
 
 ```bash
-gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c src/pressure.c src/energy.c src/data.c -Iinclude -o converter
+gcc src/main.c src/input.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c src/pressure.c src/energy.c src/data.c -Iinclude -o converter
 ```
 
 ---
@@ -270,7 +273,7 @@ Possible features to add:
 - [x] Add pressure conversions
 - [x] Add energy conversions
 - [x] Add data-storage conversions (B, KB, MB, GB, TB)
-- [ ] Add input validation
+- [x] Add input validation
 - [ ] Add conversion history
 - [x] Add a more advanced menu system
 - [ ] Add colored terminal output

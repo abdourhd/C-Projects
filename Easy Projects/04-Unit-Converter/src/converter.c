@@ -17,11 +17,9 @@ void display_title(void) {
 }
 
 int display_menu(void) {
-    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n8. Pressure\n9. Energy\n10. Data-Storage\n\n0. Exit\n\nChoose a category: ");
+    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n8. Pressure\n9. Energy\n10. Data-Storage\n\n0. Exit\n");
 
-    int category;
-    scanf("%d", &category);
-
+    int category = get_int("\nChoose a category: ", 0, 10);
     return category;
 }
 
@@ -31,20 +29,15 @@ void length_menu(void) {
 
     printf("\n========== LENGTH ==========\n1. Meter\n2. Millimeter\n3. Centimeter\n4. Kilometer\n5. Inch\n6. Foot\n7. Yard\n8. Mile\n\n0. Back\n");
 
-    printf("\nConvert FROM: ");
-    scanf("%d", &from);
-
+    from = get_int("Convert FROM: ", 0, 8);
     if (from == 0)
         return;
-
-    printf("Convert TO: ");
-    scanf("%d", &to);
-
+    
+    to = get_int("Convert TO: ", 0, 8);
     if (to == 0)
         return;
 
-    printf("Enter value: ");
-    scanf("%lf", &value);
+    value = get_double("Enter value: ");
 
     meters = length_to_meter(value, from);
     result = meter_to_length(meters, to);
@@ -58,20 +51,15 @@ void temperature_menu(void) {
 
     printf("\n======== TEMPERATURE ========\n1. Celsiuis\n2. Fahrenheit\n3. Kelvin\n\n0. Back\n");
 
-    printf("\nConvert FROM: ");
-    scanf("%d", &from);
-
+    from = get_int("Convert FROM: ", 0, 3);
     if (from == 0)
         return;
-
-    printf("Convert TO: ");
-    scanf("%d", &to);
-
+    
+    to = get_int("Convert TO: ", 0, 3);
     if (to == 0)
         return;
 
-    printf("Enter value: ");
-    scanf("%lf", &value);
+    value = get_double("Enter value: ");
 
     celsius = temperature_to_celsius(value, from);
     result = celsius_to_temperature(celsius, to);
@@ -85,20 +73,15 @@ void time_menu(void) {
 
     printf("\n=========== TIME ===========\n1. Second\n2. Minute\n3. Hour\n4. Day\n\n0. Back\n");
 
-    printf("\nConvert FROM: ");
-    scanf("%d", &from);
-
+    from = get_int("Convert FROM: ", 0, 4);
     if (from == 0)
         return;
-
-    printf("Convert TO: ");
-    scanf("%d", &to);
-
+    
+    to = get_int("Convert TO: ", 0, 4);
     if (to == 0)
         return;
 
-    printf("Enter value: ");
-    scanf("%lf", &value);
+    value = get_double("Enter value: ");
 
     second = time_to_second(value, from);
     result = second_to_time(second, to);
@@ -112,20 +95,15 @@ void volume_menu(void) {
 
     printf("\n========== VOLUME ==========\n1. Liter\n2. Millilter\n3. Centiliter\n4. Cubic centimeter\n5. Cubic meter\n6. Gallon\n7. Cup\n8. Fluid ounce\n\n0. Back\n");
 
-    printf("\nConvert FROM: ");
-    scanf("%d", &from);
-
+    from = get_int("Convert FROM: ", 0, 8);
     if (from == 0)
         return;
-
-    printf("Convert TO: ");
-    scanf("%d", &to);
-
+    
+    to = get_int("Convert TO: ", 0, 8);
     if (to == 0)
         return;
 
-    printf("Enter value: ");
-    scanf("%lf", &value);
+    value = get_double("Enter value: ");
 
     liter = volume_to_liter(value, from);
     result = liter_to_volume(liter, to);
@@ -139,20 +117,15 @@ void weight_menu(void) {
 
     printf("\n========== WEIGHT ==========\n1. Gram\n2. Milligram\n3. Kilogram\n4. Metric ton\n5. Ounce\n6. Pound\n\n0. Back\n");
 
-    printf("\nConvert FROM: ");
-    scanf("%d", &from);
-
+    from = get_int("Convert FROM: ", 0, 6);
     if (from == 0)
         return;
-
-    printf("Convert TO: ");
-    scanf("%d", &to);
-
+    
+    to = get_int("Convert TO: ", 0, 6);
     if (to == 0)
         return;
 
-    printf("Enter value: ");
-    scanf("%lf", &value);
+    value = get_double("Enter value: ");
 
     gram = weight_to_gram(value, from);
     result = gram_to_weight(gram, to);
@@ -166,20 +139,15 @@ void area_menu(void) {
 
     printf("\n=========== AREA ===========\n1. Square meter\n2. Square millimeter\n3. Square centimeter\n4. Square kilometer\n5. Square inch\n6. Square foot\n7. Square yard\n8. Square mile\n9. Hectare\n10. Acre\n\n0. Back\n");
 
-    printf("\nConvert FROM: ");
-    scanf("%d", &from);
-
+    from = get_int("Convert FROM: ", 0, 10);
     if (from == 0)
         return;
-
-    printf("Convert TO: ");
-    scanf("%d", &to);
-
+    
+    to = get_int("Convert TO: ", 0, 10);
     if (to == 0)
         return;
 
-    printf("Enter value: ");
-    scanf("%lf", &value);
+    value = get_double("Enter value: ");
 
     squaremeter = area_to_squaremeter(value, from);
     result = squaremeter_to_area(squaremeter, to);
@@ -193,21 +161,15 @@ void speed_menu(void) {
 
     printf("\n=========== SPEED ===========\n1. Meter per second\n2. Kilometer per hour\n3. mile per hour\n4. Foot per second\n5. Knot\n6. Centimeter per second\n7. Kilometer per second\n8. Mile per second\n\n0. Back\n");
 
-    printf("\nConvert FROM: ");
-    scanf("%d", &from);
-
+    from = get_int("Convert FROM: ", 0, 8);
     if (from == 0)
         return;
-
-    printf("Convert TO: ");
-    scanf("%d", &to);
-
+    
+    to = get_int("Convert TO: ", 0, 8);
     if (to == 0)
         return;
 
-    printf("Enter value: ");
-    scanf("%lf", &value);
-
+    value = get_double("Enter value: ");
     meterpersecond = speed_to_meterpersecond(value, from);
     result = meterpersecond_to_speed(meterpersecond, to);
 
@@ -220,20 +182,15 @@ void pressure_menu(void) {
 
     printf("\n========= PRESSURE =========\n1. Pascal\n2. Kilopascal\n3. Megapascal\n4. Bar\n5. Millibar\n6. Atmosphere\n7. PSI\n8. Millimetres of mercury\n\n0. Back\n");
 
-    printf("\nConvert FROM: ");
-    scanf("%d", &from);
-
+    from = get_int("Convert FROM: ", 0, 8);
     if (from == 0)
         return;
-
-    printf("Convert TO: ");
-    scanf("%d", &to);
-
+    
+    to = get_int("Convert TO: ", 0, 8);
     if (to == 0)
         return;
 
-    printf("Enter value: ");
-    scanf("%lf", &value);
+    value = get_double("Enter value: ");
 
     pascal = pressure_to_pascal(value, from);
     result = pascal_to_pressure(pascal, to);
@@ -247,20 +204,15 @@ void energy_menu(void) {
 
     printf("\n========== ENERGY ==========\n1. joule\n2. Kilojoule\n3. Megajoule\n4. Calorie\n5. Kilocalorie\n6. Watt-hour\n7. Kilowatt-hour\n8. British thermal unit\n\n0. Back\n");
 
-    printf("\nConvert FROM: ");
-    scanf("%d", &from);
-
+    from = get_int("Convert FROM: ", 0, 8);
     if (from == 0)
         return;
-
-    printf("Convert TO: ");
-    scanf("%d", &to);
-
+    
+    to = get_int("Convert TO: ", 0, 8);
     if (to == 0)
         return;
 
-    printf("Enter value: ");
-    scanf("%lf", &value);
+    value = get_double("Enter value: ");
 
     joule = energy_to_joule(value, from);
     result = joule_to_energy(joule, to);
@@ -274,20 +226,15 @@ void data_menu(void) {
 
     printf("\n======= DATA-STORAGE =======\n1. Bit\n2. Byte\n3. Kilobyte\n4. Megabyte\n5. Gigabyte\n6. Terabyte\n7. Petabyte\n8. Kibibyte\n9. Mebibyte\n10. Gibibyte\n\n0. Back\n");
 
-    printf("\nConvert FROM: ");
-    scanf("%d", &from);
-
+    from = get_int("Convert FROM: ", 0, 10);
     if (from == 0)
         return;
-
-    printf("Convert TO: ");
-    scanf("%d", &to);
-
+    
+    to = get_int("Convert TO: ", 0, 10);
     if (to == 0)
         return;
 
-    printf("Enter value: ");
-    scanf("%lf", &value);
+    value = get_double("Enter value: ");
 
     byte = data_to_byte(value, from);
     result = byte_to_data(byte, to);
