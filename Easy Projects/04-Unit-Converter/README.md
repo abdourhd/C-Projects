@@ -98,6 +98,19 @@ The converter supports several categories of units:
 - Kilowatt-hour (kWh)
 - British thermal unit (BTU)
 
+## Data Storage
+
+- Bit (bit)
+- Byte (B)
+- Kilobyte (KB)
+- Megabyte (MB)
+- Gigabyte (GB)
+- Terabyte (TB)
+- Petabyte (PB)
+- Kibibyte (KiB)
+- Mebibyte (MiB)
+- Gibibyte (GiB)
+
 ---
 
 ## Technologies
@@ -115,6 +128,7 @@ The converter supports several categories of units:
 │
 ├── include/
 │   ├── converter.h
+│   ├── data.h
 │   ├── length.h
 │   ├── weight.h
 │   ├── temperature.h
@@ -128,6 +142,7 @@ The converter supports several categories of units:
 ├── src/
 │   ├── main.c
 │   ├── converter.c
+│   ├── data.c
 │   ├── length.c
 │   ├── weight.c
 │   ├── temperature.c
@@ -161,7 +176,7 @@ The converter supports several categories of units:
 Using GCC:
 
 ```bash
-gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c src/pressure.c src/energy.c -Iinclude -o converter
+gcc src/main.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c src/pressure.c src/energy.c src/data.c -Iinclude -o converter
 ```
 
 ---
@@ -198,6 +213,7 @@ converter.exe
 7. Speed
 8. Pressure
 9. Energy
+10. Data-Storage
 
 0. Exit
 
@@ -253,8 +269,7 @@ Possible features to add:
 - [x] Add speed conversions
 - [x] Add pressure conversions
 - [x] Add energy conversions
-- [ ] Add data-storage conversions (B, KB, MB, GB, TB)
-- [ ] Add currency conversion
+- [x] Add data-storage conversions (B, KB, MB, GB, TB)
 - [ ] Add input validation
 - [ ] Add conversion history
 - [x] Add a more advanced menu system

@@ -10,13 +10,14 @@
 #include "speed.h"
 #include "pressure.h"
 #include "energy.h"
+#include "data.h"
 
 void display_title(void) {
     printf("=============================\n       UNIT CONVERTER       \n=============================\n");
 }
 
 int display_menu(void) {
-    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n8. Pressure\n9. Energy\n\n0. Exit\n\nChoose a category: ");
+    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n8. Pressure\n9. Energy\n10. Data-Storage\n\n0. Exit\n\nChoose a category: ");
 
     int category;
     scanf("%d", &category);
@@ -265,4 +266,31 @@ void energy_menu(void) {
     result = joule_to_energy(joule, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, energy_unit_name(from), result, energy_unit_name(to));
+}
+
+void data_menu(void) {
+    int from, to;
+    double value, byte, result;
+
+    printf("\n======= DATA-STORAGE =======\n1. Bit\n2. Byte\n3. Kilobyte\n4. Megabyte\n5. Gigabyte\n6. Terabyte\n7. Petabyte\n8. Kibibyte\n9. Mebibyte\n10. Gibibyte\n\n0. Back\n");
+
+    printf("\nConvert FROM: ");
+    scanf("%d", &from);
+
+    if (from == 0)
+        return;
+
+    printf("Convert TO: ");
+    scanf("%d", &to);
+
+    if (to == 0)
+        return;
+
+    printf("Enter value: ");
+    scanf("%lf", &value);
+
+    byte = data_to_byte(value, from);
+    result = byte_to_data(byte, to);
+
+    printf("\nResult: %.2f %s = %.2f %s\n", value, data_unit_name(from), result, data_unit_name(to));
 }

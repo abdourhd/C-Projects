@@ -44,6 +44,10 @@ int main() {
                 energy_menu();
                 break;
 
+            case 10:
+                data_menu();
+                break;
+
             case 0:
                 printf("\nGoodbye!\n");
                 break;
