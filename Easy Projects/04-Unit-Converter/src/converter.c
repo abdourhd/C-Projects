@@ -1,6 +1,8 @@
 #include <stdio.h>
 
 #include "converter.h"
+#include "history.h"
+#include "input.h"
 #include "length.h"
 #include "temperature.h"
 #include "time.h"
@@ -17,9 +19,9 @@ void display_title(void) {
 }
 
 int display_menu(void) {
-    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n8. Pressure\n9. Energy\n10. Data-Storage\n\n0. Exit\n");
+    printf("\n\n1. Length\n2. Weight\n3. Temperature\n4. Time\n5. Volume\n6. Area\n7. Speed\n8. Pressure\n9. Energy\n10. Data-Storage\n\n11. History\n0. Exit\n");
 
-    int category = get_int("\nChoose a category: ", 0, 10);
+    int category = get_int("\nChoose a category: ", 0, 11);
     return category;
 }
 
@@ -43,6 +45,7 @@ void length_menu(void) {
     result = meter_to_length(meters, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, length_unit_name(from), result, length_unit_name(to));
+    save_conversion("./data/history.txt", value, length_unit_name(from), result, length_unit_name(to));
 }
 
 void temperature_menu(void) {
@@ -65,6 +68,7 @@ void temperature_menu(void) {
     result = celsius_to_temperature(celsius, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, temperature_unit_name(from), result, temperature_unit_name(to));
+    save_conversion("./data/history.txt", value, temperature_unit_name(from), result, temperature_unit_name(to));
 }
 
 void time_menu(void) {
@@ -87,6 +91,7 @@ void time_menu(void) {
     result = second_to_time(second, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, time_unit_name(from), result, time_unit_name(to));
+    save_conversion("./data/history.txt", value, time_unit_name(from), result, time_unit_name(to));
 }
 
 void volume_menu(void) {
@@ -109,6 +114,7 @@ void volume_menu(void) {
     result = liter_to_volume(liter, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, volume_unit_name(from), result, volume_unit_name(to));
+    save_conversion("./data/history.txt", value, volume_unit_name(from), result, volume_unit_name(to));
 }
 
 void weight_menu(void) {
@@ -131,6 +137,7 @@ void weight_menu(void) {
     result = gram_to_weight(gram, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, weight_unit_name(from), result, weight_unit_name(to));
+    save_conversion("./data/history.txt", value, weight_unit_name(from), result, weight_unit_name(to));
 }
 
 void area_menu(void) {
@@ -153,6 +160,7 @@ void area_menu(void) {
     result = squaremeter_to_area(squaremeter, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, area_unit_name(from), result, area_unit_name(to));
+    save_conversion("./data/history.txt", value, area_unit_name(from), result, area_unit_name(to));
 }
 
 void speed_menu(void) {
@@ -174,6 +182,7 @@ void speed_menu(void) {
     result = meterpersecond_to_speed(meterpersecond, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, speed_unit_name(from), result, speed_unit_name(to));
+    save_conversion("./data/history.txt", value, speed_unit_name(from), result, speed_unit_name(to));
 }
 
 void pressure_menu(void) {
@@ -196,6 +205,7 @@ void pressure_menu(void) {
     result = pascal_to_pressure(pascal, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, pressure_unit_name(from), result, pressure_unit_name(to));
+    save_conversion("./data/history.txt", value, pressure_unit_name(from), result, pressure_unit_name(to));
 }
 
 void energy_menu(void) {
@@ -218,6 +228,7 @@ void energy_menu(void) {
     result = joule_to_energy(joule, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, energy_unit_name(from), result, energy_unit_name(to));
+    save_conversion("./data/history.txt", value, energy_unit_name(from), result, energy_unit_name(to));
 }
 
 void data_menu(void) {
@@ -240,4 +251,5 @@ void data_menu(void) {
     result = byte_to_data(byte, to);
 
     printf("\nResult: %.2f %s = %.2f %s\n", value, data_unit_name(from), result, data_unit_name(to));
+    save_conversion("./data/history.txt", value, data_unit_name(from), result, data_unit_name(to));
 }

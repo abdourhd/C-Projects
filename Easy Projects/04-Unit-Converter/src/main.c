@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "converter.h"
+#include "history.h"
 
 int main() {
     int category;
@@ -46,6 +47,10 @@ int main() {
 
             case 10:
                 data_menu();
+                break;
+
+            case 11:
+                display_history("./data/history.txt");
                 break;
 
             case 0:

@@ -8,6 +8,9 @@ int get_int(const char *prompt, int min, int max) {
     int value;
 
     printf("%s", prompt);
+    fgets(input, sizeof(input), stdin);
+    value = strtod(input, NULL);
+
     while(value < min || value > max) {
         printf("Value must be between %d and %d.\n", min, max);
         printf("%s", prompt);
@@ -24,6 +27,9 @@ double get_double(const char *prompt) {
     double value;
 
     printf("%s", prompt);
+    fgets(input, sizeof(input), stdin);
+    value = strtod(input, NULL);
+
     while (value < 0) {
         printf("Value cannot be negative.\n");
         printf("%s", prompt);

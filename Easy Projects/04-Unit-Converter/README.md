@@ -129,6 +129,7 @@ The converter supports several categories of units:
 ├── include/
 │   ├── input.h
 │   ├── converter.h
+│   ├── history.h
 │   ├── data.h
 │   ├── length.h
 │   ├── weight.h
@@ -144,6 +145,7 @@ The converter supports several categories of units:
 │   ├── main.c
 │   ├── input.h
 │   ├── converter.c
+│   ├── history.c
 │   ├── data.c
 │   ├── length.c
 │   ├── weight.c
@@ -154,6 +156,9 @@ The converter supports several categories of units:
 │   ├── pressure.c
 │   ├── energy.c
 │   └── area.c
+│
+├── data/
+│   └── history.txt
 │
 ├── .gitignore
 └── README.md
@@ -171,6 +176,7 @@ The converter supports several categories of units:
 6. The program validate the 4 precedent inputs and can reject them.
 7. The program display the value of the unit you wanted.
 8. The program also display the value of the unit you inserted.
+9. The program save the conversion in a file.
 
 ---
 
@@ -179,7 +185,7 @@ The converter supports several categories of units:
 Using GCC:
 
 ```bash
-gcc src/main.c src/input.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c src/pressure.c src/energy.c src/data.c -Iinclude -o converter
+gcc src/main.c src/input.c src/converter.c src/length.c src/weight.c src/temperature.c src/time.c src/volume.c src/speed.c src/area.c src/pressure.c src/energy.c src/data.c src/history.c -Iinclude -o converter
 ```
 
 ---
@@ -218,6 +224,7 @@ converter.exe
 9. Energy
 10. Data-Storage
 
+11. History
 0. Exit
 
 Choose a category: 1
@@ -274,7 +281,7 @@ Possible features to add:
 - [x] Add energy conversions
 - [x] Add data-storage conversions (B, KB, MB, GB, TB)
 - [x] Add input validation
-- [ ] Add conversion history
+- [x] Add conversion history
 - [x] Add a more advanced menu system
 - [ ] Add colored terminal output
 - [ ] Improve error handling
