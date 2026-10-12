@@ -2,136 +2,89 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+
 #define M_PI 3.14159265358979323846
+
 double Num1, Num2, Res;
 char Op;
 
-int factorial(double x) {
-    int f = 1;
-    if(x == 0) {
-        return f;
+int factorial(double value) {
+    int fact = 1;
+    if(value == 0) {
+        return fact;
     }
-    int t = (int)x;
-    while(t > 0) {
-        f *= t;
-        t--;
+    value = (int)value;
+    while(value > 0) {
+        fact *= value;
+        value--;
     }
-    return f;
+    return fact;
 }
 
-double randf(double x, double y) {
-    if(x == y) {
-        return x;
+double randf(double val1, double val2) {
+    if(val1 == val2) {
+        return val1;
     }
-    double t1, t2;
-    if(x < y) {
-        t1 = x;
-        t2 = y;
-    } else {
-        t1 = y;
-        t2 = x;
+    double temp;
+    if(val1 > val2) {
+        temp = val2;
+        val2 = val1;
+        val1 = temp;
     }
-    return t1 + ((float)rand() / RAND_MAX) * (t2 - t1);
+    return val1 + ((float)rand() / RAND_MAX) * (val2 - val1);
 }
 
-int prime(double x) {
-    int t = (int)x;
-    if(t < 2) {
+int prime(double value) {
+    value = (int)value;
+    if(value < 2) {
         return 0;
     }
-    if(t == 2) {
+    if(value == 2) {
         return 1;
     }
-    for(int i = 2; i < sqrt(x); i++) {
-        if((t % i) == 0) {
+    int temp = value;
+    for(int i = 2; i < sqrt(value); i++) {
+        if((temp % i) == 0) {
             return 0;
         }
     }
     return 1;
 }
 
-int gcd(double x, double y) {
-    if(x == y) {
-        return x;
+int gcd(double val1, double val2) {
+    int temp1 = (int)val1;
+    int temp2 = (int)val2;
+    if(val1 == val2) {
+        return val1;
     }
-    int t1, t2, r;
-    if(x > y) {
-        t1 = (int)x;
-        t2 = (int)y;
-    } else {
-        t1 = (int)y;
-        t2 = (int)x;
+    int temp, reminder;
+    if(temp1 < temp2) {
+        temp = temp2;
+        temp2 = temp1;
+        temp1 = temp;
     }
-    while (r > 0) {
-        r = t1 % t2;
-        t1 = t2;
-        t2 = r;
+    while (reminder > 0) {
+        reminder = temp1 % temp2;
+        temp1 = temp2;
+        temp2 = reminder;
     }
-    return t1;
+    return temp1;
 }
 
-int lcm(double x, double y) {
-    return ((int)x * (int)y) / gcd(x, y);
+int lcm(double val1, double val2) {
+    return ((int)val1 * (int)val2) / gcd(val1, val2);
 }
 
 int main() {
     srand(time(NULL));
-    printf("========================\n       CALCULATOR       \n========================\n\n");
- 
-    printf("Enter first number: ");
+    printf("========================\n       CALCULATOR       \n========================\n\nEnter first number: ");
     scanf("%lf", &Num1);
-    printf("\n========== OPERATORS ==========\n");
 
-    printf("\nBasic:\n");
-    printf("  +  Addition\n");
-    printf("  -  Subtraction\n");
-    printf("  *  Multiplication\n");
-    printf("  /  Division\n");
-    printf("  %%  Modulo\n");
+    printf("\n========== OPERATORS ==========\n\nBasic:\n  +  Addition\n  -  Subtraction\n  *  Multiplication\n  /  Division\n  %%  Modulo\n\nPowers & Roots:\n  ^  Power\n  r  Square root\n  s  Square\n  c  Cube\n\nOther:\n  !  Factorial\n  |  Absolute value\n  @  Percentage\n\nRounding:\n  f  Floor\n  h  Ceiling\n  n  Round\n\nAdvanced:\n  C  Combination\n  P  Permutation\n  m  Minimum\n  M  Maximum\n  ?  Random number\n  p  Prime check\n  g  GCD\n  l  LCM\n\nTrigonometry:\n  t  sinus\n  u  cosinus\n  v  tangent\n  S  arcsinus\n  A  arcosinus\n  T  arctangent\n\nExponential:\n  e  exponential\n  E  exp base-10\n  L  ln\n  o  log\n\n===============================\n");
 
-    printf("\nPowers & Roots:\n");
-    printf("  ^  Power\n");
-    printf("  r  Square root\n");
-    printf("  s  Square\n");
-    printf("  c  Cube\n");
-
-    printf("\nOther:\n");
-    printf("  !  Factorial\n");
-    printf("  |  Absolute value\n");
-    printf("  @  Percentage\n");
-
-    printf("\nRounding:\n");
-    printf("  f  Floor\n");
-    printf("  h  Ceiling\n");
-    printf("  n  Round\n");
-
-    printf("\nAdvanced:\n");
-    printf("  C  Combination\n");
-    printf("  P  Permutation\n");
-    printf("  m  Minimum\n");
-    printf("  M  Maximum\n");
-    printf("  ?  Random number\n");
-    printf("  p  Prime check\n");
-    printf("  g  GCD\n");
-    printf("  l  LCM\n");
-
-    printf("\nTrigonometry:\n");
-    printf("  t  sinus\n");
-    printf("  u  cosinus\n");
-    printf("  v  tangent\n");
-    printf("  S  arcsinus\n");
-    printf("  A  arcosinus\n");
-    printf("  T  arctangent\n");
-
-    printf("\nExponential:\n");
-    printf("  e  exponential\n");
-    printf("  E  exp base-10\n");
-    printf("  L  ln\n");
-    printf("  o  log\n");
-
-    printf("\n===============================\n");
     printf("Enter operator: ");
     scanf(" %c", &Op);
+    
     if(Op != '|' && Op != 'r' && Op != 's' && Op != 'c' && Op !='!' && Op != 'f' && Op != 'h' && Op != 'n' && Op != 'p' && Op != 't' && Op != 'u' && Op != 'v' && Op != 'S' && Op != 'A' && Op != 'T' && Op != 'e' && Op != 'E' && Op != 'L' && Op != 'o') {
         printf("Enter second number: ");
         scanf("%lf", &Num2);
