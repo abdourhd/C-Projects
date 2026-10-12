@@ -1,4 +1,5 @@
 #include <stdlib.h>
+
 #include "utils.h"
 
 void shuffle(Question questions[], int size) {

@@ -37,6 +37,7 @@ The player can replay at the end of the round.
 │
 ├── include/
 │   ├── question.h
+│   ├── color.h
 │   ├── quiz.h
 │   ├── file.h
 │   ├── score.h

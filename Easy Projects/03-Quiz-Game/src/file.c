@@ -1,11 +1,14 @@
-#include <stdio.H>
+#include <stdio.h>
+
 #include "file.h"
+#include "color.h"
 
 int load_questions(const char *filename, Question questions[]) {
     FILE *file = fopen(filename, "r");
 
     if(file == NULL) {
-        return 0;
+        perror(RED"Error Opening file"RST);
+        return;
     }
 
     int count = 0;

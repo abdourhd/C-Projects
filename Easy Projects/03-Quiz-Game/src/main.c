@@ -7,10 +7,7 @@
 #include "score.h"
 #include "utils.h"
 #include "quiz.h"
-
-#define BLUE "\033[34m"
-#define BOLD "\033[1m"
-#define RESET "\033[0m"
+#include "color.h"
 
 int main() {
     
@@ -24,11 +21,11 @@ int main() {
         int num = load_questions("./data/questions.txt", questions);
 
         if(num == 0) {
-            printf("failed to load questions");
+            printf(RED"failed to load questions"RST);
             return 1;
         }
 
-        printf("\n" BOLD "=====Quiz Game=====" RESET "\n\n");
+        printf(BLD"\n=====Quiz Game=====\n\n"RST);
 
         int difficulty = choice();
 
@@ -43,10 +40,10 @@ int main() {
         int highscore = load_highscore("./data/highscore.txt", difficulty);
 
         if(score > highscore) {
-            printf("New high score!\n");
+            printf(MAG BLD"New high score!\n"RST);
             save_highscore("./data/highscore.txt", score, difficulty);
         } else {
-            printf("Highscore: %d/%d\n", highscore, num);
+            printf(GRN"Highscore: %d/%d\n"RST, highscore, num);
         }
 
         Exit = replay();

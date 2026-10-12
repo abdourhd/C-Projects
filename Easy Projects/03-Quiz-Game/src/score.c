@@ -1,19 +1,17 @@
 #include <stdio.h>
-#include "score.h"
 
-#define GREEN "\033[32m"
-#define BLUE "\033[34m"
-#define BOLD "\033[1m"
-#define RESET "\033[0m"
+#include "score.h"
+#include "color.h"
 
 void display_score(int score, int total) {
-    printf("\n" BOLD BLUE "===Quiz End===" RESET "\nYour score: " GREEN "%d" RESET "/" GREEN "%d" RESET "\n", score, total);
+    printf(BLD BLU"\n===Quiz End==="RST"\nYour score: "GRN"%d"RST"/"GRN"%d\n"RST, score, total);
 }
 
 int load_highscore(const char *filename, int difficulty) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
-        return 0;
+        perror(RED"Error Opening file"RST);
+        return;
     }
 
     int score1, score2, score3;
@@ -44,7 +42,7 @@ void save_highscore(const char *filename, int score, int difficulty) {
     FILE *temp = fopen("./data/temp.txt", "w");
 
     if(temp == NULL || file == NULL) {
-        perror("Error Opening file");
+        perror(RED"Error Opening file"RST);
         return;
     }
 
@@ -79,7 +77,7 @@ void save_highscore(const char *filename, int score, int difficulty) {
     remove(filename);
 
     if(rename("./data/temp.txt", filename) != 0) {
-        perror("Error renaming file");
+        perror(RED"Error renaming file"RST);
         return;
     }
 }

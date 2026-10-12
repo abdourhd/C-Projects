@@ -1,14 +1,12 @@
 #include <stdio.h>
-#include "question.h"
 
-#define YELLOW "\033[33m"
-#define CYAN "\033[36m"
-#define RESET "\033[0m"
+#include "question.h"
+#include "color.h"
 
 void display_question(Question q) {
-    printf(YELLOW "- %s" RESET "\n", q.question);
+    printf(YEL"- %s" RST"\n", q.question);
     for (int j = 0; j < 4; j++) {
-        printf(CYAN "    %d. %s" RESET, j+1, q.options[j]);
+        printf(CYN"    %d. %s"RST, j+1, q.options[j]);
     }
 }
 

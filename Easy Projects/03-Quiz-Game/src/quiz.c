@@ -1,16 +1,11 @@
 #include <stdio.h>
-#include "quiz.h"
 
-#define RED "\033[31m"
-#define GREEN "\033[32m"
-#define YELLOW "\033[33m"
-#define BLUE "\033[34m"
-#define BOLD "\033[1m"
-#define RESET "\033[0m"
+#include "quiz.h"
+#include "color.h"
 
 int choice() {
     int difficulty;
-    printf("Quiz difficulty:\n\n    " GREEN "1. Easy" RESET "\n    " YELLOW "2. Medium" RESET "\n    " RED "3. Hard" RESET "\n\nYour choice: ");
+    printf("Quiz difficulty:\n\n    "GRN"1. Easy"RST"\n    "YEL"2. Medium"RST"\n    "RED"3. Hard"RST"\n\nYour choice: ");
     scanf("%d", &difficulty);
 
     return difficulty;
@@ -38,10 +33,10 @@ int num_question(int difficulty, int total) {
 int run_quiz(Question questions[], int num) {
     int score = 0;
 
-    printf("\n" BOLD BLUE "===Quiz Start===" RESET "\n");
+    printf(BLD BLU"\n===Quiz Start===\n"RST);
 
     for(int i = 0; i < num; i++) {
-        printf("\n" YELLOW "%d" RESET, i+1);
+        printf(YEL"\n%d"RST, i+1);
         display_question(questions[i]);
 
         int answer;
@@ -50,10 +45,10 @@ int run_quiz(Question questions[], int num) {
         scanf("%d", &answer);
 
         if(check_answer(questions[i], answer)) {
-            printf(GREEN "\nCorrect!\n" RESET);
+            printf(GRN"\nCorrect!\n"RST);
             score++;
         } else {
-            printf(RED "\nWrong!\n" RESET);
+            printf(RED"\nWrong!\n"RST);
         }
     }
 
@@ -62,7 +57,7 @@ int run_quiz(Question questions[], int num) {
 
 int replay() {
     int Exit;
-    printf("\n" BOLD BLUE "===================" RESET "\n\nChoose:\n\n    0. Exit\n    1. Replay\n\nYour choice: ");
+    printf(BLD BLU"\n==================="RST"\n\nChoose:\n\n"YEL"    0. Exit\n"RST GRN"    1. Replay\n"RST"\nYour choice: ");
     scanf("%d", &Exit);
     return Exit;
 }
