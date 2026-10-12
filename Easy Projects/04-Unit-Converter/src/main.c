@@ -2,6 +2,7 @@
 
 #include "converter.h"
 #include "history.h"
+#include "color.h"
 
 int main() {
     int category;
@@ -54,10 +55,10 @@ int main() {
                 break;
 
             case 0:
-                printf("\nGoodbye!\n");
+                printf(MAG BLD"\nGoodbye!\n"RST);
                 break;
 
-            default: printf("\nInvalid category!\n");
+            default: printf(RED"\nInvalid category!\n"RST);
         }
     } while(category != 0);
 

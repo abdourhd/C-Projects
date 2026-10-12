@@ -130,6 +130,7 @@ The converter supports several categories of units:
 │   ├── input.h
 │   ├── converter.h
 │   ├── history.h
+│   ├── color.h
 │   ├── data.h
 │   ├── length.h
 │   ├── weight.h
@@ -176,7 +177,8 @@ The converter supports several categories of units:
 6. The program validate the 4 precedent inputs and can reject them.
 7. The program display the value of the unit you wanted.
 8. The program also display the value of the unit you inserted.
-9. The program save the conversion in a file.
+9. The program save the history of conversions in a file.
+10. Display a colored output.
 
 ---
 
@@ -283,8 +285,8 @@ Possible features to add:
 - [x] Add input validation
 - [x] Add conversion history
 - [x] Add a more advanced menu system
-- [ ] Add colored terminal output
-- [ ] Improve error handling
+- [x] Add colored terminal output
+- [x] Improve error handling
 
 ---
 
